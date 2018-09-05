@@ -1,0 +1,7 @@
+[user]
+	name = oka
+	email = pn11@users.noreply.github.com
+[alias]
+  st = status
+  cm = commit
+  cma = commit -a
