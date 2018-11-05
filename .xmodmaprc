@@ -1,0 +1,14 @@
+clear Lock
+clear Control
+keysym Caps_Lock = Control_L
+keysym Control_L = Control_L
+add Control = Control_L
+add Lock = Caps_Lock
+keycode 66 = Control_L
+keycode 100 = Alt_L
+keycode 101= Alt_L
+keycode 101= Alt_R
+! For EeePC
+!keycode 135 = Left
+! For Mac-like touch pad scrolling behaviour
+!pointer = 1 2 3 5 4 7 6
