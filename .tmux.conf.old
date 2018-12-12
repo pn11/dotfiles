@@ -1,0 +1,97 @@
+# 2015年ごろ使っていたもの。
+bind r source-file ~/.tmux.conf \; display "Reloaded!"
+set-option -g prefix C-t
+bind-key C-t send-prefix
+unbind-key C-b
+
+set -s escape-time 0
+
+setw -g utf8 on
+set -g status-utf8 on
+
+#source .bashrc
+set-option -g default-shell /bin/bash
+set-option -g default-command /bin/bash
+
+# term
+set-option -g default-terminal xterm-256color
+
+# emphasize current pane 
+set -g pane-border-fg "#4F4F4F"
+set -g pane-border-bg "#494949"
+set -g pane-active-border-fg "#7F9F7F"
+set -g pane-active-border-bg "#494949"
+
+#zenburn theme
+setw -g clock-mode-colour colour117
+setw -g mode-attr bold
+setw -g mode-fg colour117
+setw -g mode-bg colour238
+set -g status-bg colour235
+set -g status-fg colour248
+set -g status-attr dim
+#set-option -g status-justify "centre"
+set-option -g status-position bottom
+set -g status-left '##[fg=colour187,bold]#H > #[fg=default] #S > '
+set -g status-right '#[fg=colour187,bold] %Y/%m/%d %H:%M:%S '
+set -g status-left-length 40
+set -g status-right-length 140
+setw -g window-status-current-fg colour223
+setw -g window-status-current-bg colour237
+setw -g window-status-current-attr bold
+set -g message-attr bold
+set -g message-fg colour117
+set -g message-bg colour235
+set -g status-interval 1
+
+setw -g monitor-activity on
+set -g visual-activity on
+
+# mouse settings
+#setw -g mode-mouse on # scrolling
+set -g mouse-select-pane on
+set -g mouse-resize-pane on
+set -g mouse-select-window on
+
+set -ag terminal-overrides ',screen*:cvvis=\E[34l\E[?25h'
+
+##Above here fujita
+##below here Oka
+
+bind | split-window -hc "#{pane_current_path}" #http://qiita.com/zwirky/items/adbf22abad7d7822456b
+bind - split-window -vc "#{pane_current_path}" # ibid.
+#pane_current_path -> http://qiita.com/naoty_k/items/954d1d0080d0a7d52584
+
+#bind C-s setw -g mode-mouse on\; diplay "Mouse scrolling is ON!"
+
+#wanna set this -> http://qiita.com/u1tnk/items/9a680d16065217015e16
+
+#set style of clock-mode (C-t t)
+set -g clock-mode-style 24 ## 24 hour
+
+
+#set copy mode (need xsel)
+#http://proshunsuke.hatenablog.com/entry/2015/08/10/003053
+unbind -t emacs-copy M-w
+unbind -t emacs-copy C-w
+bind-key -t emacs-copy M-w copy-pipe "xsel -bi"
+bind-key -t emacs-copy C-w copy-pipe "xsel -bi"
+
+unbind -t emacs-copy C-k
+#bind-key -t emacs-copy C-k copy-end-of-line "xsel -bi"
+bind-key -t emacs-copy C-k copy-end-of-line
+
+
+## PLUGIN (not work)
+# List of plugins
+#set -g @plugin 'tmux-plugins/tpm'
+#set -g @plugin 'tmux-plugins/tmux-sensible'
+
+# Other examples:
+# set -g @plugin 'github_username/plugin_name'
+# set -g @plugin 'git@github.com/user/plugin'
+# set -g @plugin 'git@bitbucket.com/user/plugin'
+#set -g @plugin 'tmux-plugins/tmux-resurrect'
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+#run '~/.tmux/plugins/tpm/tpm'
