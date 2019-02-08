@@ -19,7 +19,7 @@
 		"scope": "python",
 		"prefix": "readfile",
 	 	"body": [
-	 		"with open('$1') as f:",
+	 		"with open('${1:infilet.xt}') as f:",
 			"    for line in f.readlines():",
 			"        print(line)"
 	 	],
@@ -29,8 +29,8 @@
 		"scope": "python",
 		"prefix": "writetofile",
 	 	"body": [
-	 		"with open('$1', 'w') as f:",
-			"    f.write($2)"
+	 		"with open('${1:outfile.txt}', 'w') as f:",
+			"    f.write('${2:line}' + '\n')"
 	 	],
 	 	"description": "Write to file."
 	},
@@ -38,8 +38,44 @@
 		"scope": "python",
 		"prefix": "zeropadding",
 	 	"body": [
-			 "test{:03}test'.format(i)"
+			 "'{0:03d} +/- {1:.3f}'.format(i, f)"
 	 	],
 	 	"description": "Zero padding demo."
+	},
+	"datasicence":{
+		"scope": "python",
+		"prefix": "ds",
+		"body":[
+			"import numpy as np",
+			"import pandas as pd",
+			"import matplotlib.pyplot as plt",
+		],
+		"description": "import datascience modules."
+	},
+	"pandas":{
+		"scope": "python",
+		"prefix": "pandas",
+		"body":[
+			"df = pd.read_csv(\"${1:in.csv}\")",
+			"df.to_csv(\"${2:out.csv}\", index=False)"
+		],
+		"description": "Pandas DataFrame skelton."
+	},
+	"matplotlib":{
+		"scope": "python",
+		"prefix": "matplotlib",
+		"body":[
+			"fig = plt.figure()",
+			"ax1 = fig.add_subplot(2, 2, 1)"
+		],
+		"description": "matplotlib skelton."
+	},
+	"competitive":{
+		"scope": "python",
+		"prefix": "competitive",
+		"body": [
+			"import numpy as np"
+		],
+		"description": "Competitive programming skelton"
 	}
 }
