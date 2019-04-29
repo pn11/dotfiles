@@ -6,3 +6,7 @@ alias exclude="grep -v"
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias lsdir="ls -F | grep /"
+alias wcl="wc -l"
+alias weather="curl wttr.in/Kyoto"
+alias rsync_easy="rsync -ahvtr"
