@@ -125,3 +125,9 @@ if [[ `uname -a` =~ Linux && `uname -a` =~ Microsoft ]]; then
     # WSL は デフォルトパーミッションがおかしくなるため変える。
     umask 022
 fi
+
+# Local setting
+if [ -f ~/.bashrc_local ]
+then
+    source ~/.bashrc_local
+fi

@@ -15,5 +15,5 @@ wget https://github.com/andy-5/wslgit/releases/download/v0.7.0/wslgit.exe -O /mn
 if [ $? -eq 0 ]
 then
     echo "wslgit installed into $INSTALL_DIR."
-    echo "Please set \"git.path\":\"$INSTALL_DIR_WIN\/wslgit.exe" in settings.json."
+    echo "Please set \"git.path\":\"$INSTALL_DIR_WIN\/wslgit.exe\" in settings.json."
 fi
