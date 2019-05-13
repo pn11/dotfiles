@@ -125,6 +125,15 @@ fi
 if [[ `uname -a` =~ Linux && `uname -a` =~ Microsoft ]]; then
     # WSL は デフォルトパーミッションがおかしくなるため変える。
     umask 022
+
+    # aliases
+    alias ex=explorer.exe
+    alias powershell=powershell.exe
+    alias psh=powershell.exe
+    alias clip=clip.exe
+    alias choco=choco.exe
+    alias npp="/mnt/c/Program\ Files/Notepad++/notepad++.exe"
+    alias ev="/mnt/c/Program\ Files/Everything/Everything.exe -s"
 fi
 
 # Local setting
