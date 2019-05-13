@@ -111,6 +111,8 @@ fi
 
 
 # DISPLAY環境変数が設定されていなかったら SSH クライアントを出力先に設定
+# この [ -v ] は bash 4.2 で追加。cf. https://luna2-linux.blogspot.com/2014/05/bash.html
+# ただし Mac の場合は brew install bash で 5.0 を入れても動かなかった。
 if [ -v DISPLAY ]
 then
     :
@@ -123,4 +125,10 @@ fi
 if [[ `uname -a` =~ Linux && `uname -a` =~ Microsoft ]]; then
     # WSL は デフォルトパーミッションがおかしくなるため変える。
     umask 022
+fi
+
+# Local setting
+if [ -f ~/.bashrc_local ]
+then
+    source ~/.bashrc_local
 fi
