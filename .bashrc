@@ -141,3 +141,8 @@ if [ -f ~/.bashrc_local ]
 then
     source ~/.bashrc_local
 fi
+
+# Temp
+alias portcheck="nc -vz"
+alias dkrun="docker run -it --rm"
+export PATH=$PATH:$HOME/git/OkaScripts/bin
