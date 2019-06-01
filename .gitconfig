@@ -1,8 +1,22 @@
-[user]
-  name = oka
-  email = pn11@users.noreply.github.com
+[color]
+  ui = auto
+
 [alias]
   st = status
   cm = commit
   cma = commit -a
-  
+  df = diff
+  ls = ls-files
+  ll = ls-files -v
+
+[include]
+	path = ~/.gitconfig_user
+
+[core]
+	excludesfile = ~/.gitignore_global
+
+[alias]
+  st = status
+  br = branch
+  cm = commit
+  cma = commit -a
