@@ -10,8 +10,9 @@ esac
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=10000
-HISTFILESIZE=20000
+# "10,000はやり過ぎだとおもうかもしれない。しかし、実際はこの程度ではむしろ手ぬるい。漢はもはや一度入力したコマンドは未来永劫直接入力はしないものだ。回りを見渡すと億単位を越えてありえないサイズを指定している人もいる。"(http://news.mynavi.jp/column/zsh/003/)
+HISTSIZE=100000
+HISTFILESIZE=100000
 # don't put duplicate lines or lines starting with space in the history.
 HISTCONTROL=ignoreboth
 HISTIGNORE="bg*:ls:pwd*:cd:"    
@@ -27,6 +28,8 @@ shopt -s checkwinsize
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+lesskey
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
@@ -120,20 +123,19 @@ else
     export DISPLAY=`echo $SSH_CLIENT | awk '{print $1}'`:0.0
 fi
 
+# For Mac
+if [ `uname` == "Darwin" ]
+then
+    if [ -f ~/.bashrc_mac ] ; then
+        . ~/.bashrc_mac
+    fi
 
 # For WSL
-if [[ `uname -a` =~ Linux && `uname -a` =~ Microsoft ]]; then
-    # WSL は デフォルトパーミッションがおかしくなるため変える。
-    umask 022
-
-    # aliases
-    alias ex=explorer.exe
-    alias powershell=powershell.exe
-    alias psh=powershell.exe
-    alias clip=clip.exe
-    alias choco=choco.exe
-    alias npp="/mnt/c/Program\ Files/Notepad++/notepad++.exe"
-    alias ev="/mnt/c/Program\ Files/Everything/Everything.exe -s"
+elif [[ `uname -a` =~ Linux && `uname -a` =~ Microsoft ]]
+then
+    if [ -f ~/.bashrc_wsl ] ; then
+    . ~/.bashrc_wsl
+    fi
 fi
 
 # Local setting

@@ -1,0 +1,2 @@
+alias lsusb="system_profiler SPUSBDataType"
+alias ldd="otool -L"

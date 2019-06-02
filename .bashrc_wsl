@@ -1,0 +1,11 @@
+# WSL は デフォルトパーミッションがおかしくなるため変える。(/etc/wsl.conf の設定も必要)
+umask 022
+
+# aliases
+alias ex=explorer.exe
+alias powershell=powershell.exe
+alias psh=powershell.exe
+alias clip=clip.exe
+alias choco=choco.exe
+alias npp="/mnt/c/Program\ Files/Notepad++/notepad++.exe"
+alias ev="/mnt/c/Program\ Files/Everything/Everything.exe -s"

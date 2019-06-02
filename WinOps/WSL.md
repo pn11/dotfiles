@@ -16,5 +16,5 @@ WSL の Git を VSCode で使うので、 `install_wslgit.sh` を実行する。
 
 ## Reference
 
--[WSL (Windows Subsystem for Linux) の導入と設定 | ラボラジアン](https://laboradian.com/installation-and-setting-of-wsl/)
+- [WSL (Windows Subsystem for Linux) の導入と設定 | ラボラジアン](https://laboradian.com/installation-and-setting-of-wsl/)
   - 詳しくて、やりたいことが似てる。
