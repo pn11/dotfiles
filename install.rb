@@ -8,7 +8,9 @@ filelist = [
   ".lesskey",
   ".screenrc",
   ".tmux.conf",
-  ".gitconfig"
+  ".gitconfig",
+  ".gitconfig_user",
+  ".gitignore_global"
 ]
 
 
