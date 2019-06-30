@@ -149,7 +149,10 @@ then
     source ~/.bashrc_local
 fi
 
+# For yarn
+if [ `which yarn` ]; then
+    export PATH="$PATH:`yarn global bin`"
+fi
+
 # Temp
-alias portcheck="nc -vz"
-alias dkrun="docker run -it --rm"
 export PATH=$PATH:$HOME/git/OkaScripts/bin

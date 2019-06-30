@@ -18,6 +18,8 @@ alias weather="curl wttr.in/Kyoto"
 alias rsync_easy="rsync -ahvtr"
 alias tar_easy="tar zxvf"
 
+alias portcheck="nc -vz"
+alias dkrun="docker run -it --rm"
 alias gterm="gnome-terminal"
 alias gnuplotp="gnuplot -persist"
 alias rubyNoWarn="ruby -W0"
