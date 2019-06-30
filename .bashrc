@@ -139,7 +139,7 @@ then
 elif [[ `uname -a` =~ Linux && `uname -a` =~ Microsoft ]]
 then
     if [ -f ~/.bashrc_wsl ] ; then
-    . ~/.bashrc_wsl
+        . ~/.bashrc_wsl
     fi
 fi
 

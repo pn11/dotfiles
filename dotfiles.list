@@ -1,0 +1,10 @@
+.bash_profile
+.bashrc
+.bashrc_mac
+.bashrc_wsl
+.emacs
+.gnuplot
+.lesskey
+.screenrc
+.tmux.conf
+.gitconfig
