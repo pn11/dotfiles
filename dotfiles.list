@@ -1,10 +1,14 @@
+.bash_aliases
 .bash_profile
 .bashrc
 .bashrc_mac
 .bashrc_wsl
 .emacs
-.gnuplot
-.lesskey
 .screenrc
 .tmux.conf
 .gitconfig
+.gitconfig_user
+.gitignore_global
+.gnuplot
+.lesskey
+.xmodmaprc
