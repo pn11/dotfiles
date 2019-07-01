@@ -8,6 +8,9 @@
   df = diff
   ls = ls-files
   ll = ls-files -v
+  # https://yulii.github.io/git-wip-alias-20160206.html
+  wip = "commit --allow-empty -m '[ci skip] wip commit'"
+
 
 [include]
 	path = ~/.gitconfig_user
