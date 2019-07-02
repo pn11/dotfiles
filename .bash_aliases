@@ -24,6 +24,10 @@ alias gterm="gnome-terminal"
 alias gnuplotp="gnuplot -persist"
 alias rubyNoWarn="ruby -W0"
 
+if [ `which bat` ];then
+    alias cat=bat
+    alias less=bat
+fi
 
 ###screen###
 #http://tm.root-n.com/unix:command:screen
