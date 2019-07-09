@@ -1,3 +1,5 @@
+#!/bin/bash
+
 alias bashrc="emacs -nw ~/.bashrc"
 alias emacsn="emacs -nw"
 alias nemacs="emacs -nw"
@@ -28,6 +30,10 @@ if [ `which bat` ];then
     alias cat=bat
     alias less=bat
 fi
+
+###Emacs daemon###
+alias E="emacsclient -t"
+alias kill-emacs="emacsclient -e '(kill-emacs)'"
 
 ###screen###
 #http://tm.root-n.com/unix:command:screen

@@ -3,7 +3,11 @@
 def load_list()
   filelist = []
   open("dotfiles.list").each do |line|
-    filelist.push(line.chomp)
+    line = line.chomp
+    if line[0] == '#'
+      next
+    end
+    filelist.push(line)
   end
   return filelist
 end

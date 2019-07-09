@@ -7,7 +7,7 @@
 .screenrc
 .tmux.conf
 .gitconfig
-.gitconfig_user
+#.gitconfig_user
 .gitignore_global
 .gnuplot
 .lesskey
