@@ -32,6 +32,7 @@ if [ `which bat` ];then
 fi
 
 ###Emacs daemon###
+alias emacsd="emacs --daemon"
 alias E="emacsclient -t"
 alias kill-emacs="emacsclient -e '(kill-emacs)'"
 
