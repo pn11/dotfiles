@@ -1,3 +1,8 @@
+;; Themes
+;; https://emacsthemes.com/
+;; https://github.com/emacs-themes/emacs-themes-site
+(load-theme 'wombat t)
+
 ;; Key bindings
 (define-key global-map (kbd "C-t") nil) ; C-t は Tmux で使うため無効化
 (define-key global-map (kbd "C-x C-o") 'other-window) ; C-x C-o で Window 切り替え
@@ -5,18 +10,23 @@
 (define-key global-map (kbd "C-h") 'delete-backward-char) ; C-h as backspace
 
 ;;; http://dev.ariel-networks.com/wp/documents/aritcles/emacs/part16
-(global-set-key "\M-g" 'goto-line)
+(define-key global-map (kbd "M-g") 'goto-line) ; M-g で指定行に移動
 
-;; use y/n not yes/no
-(fset 'yes-or-no-p 'y-or-n-p)
+(fset 'yes-or-no-p 'y-or-n-p) ; use y/n not yes/no
+
+;; Aliases
+(defalias 'exec 'shell-command)
+(defalias 'bash 'shell-command)
+(defalias 'run 'shell-command)
+(define-key global-map (kbd "C-x C-x") 'shell-command) ; C-x C-x で shell-command 
+
+(setq-default indent-tabs-mode nil) ; タブでインデントしない https://www.emacswiki.org/emacs/IndentationBasics
 
 ;; Mac で Option キーを Meta キーとして使う
 (setq mac-option-modifier 'meta)
 
 ;; Indicator (Mode line)
-;; 時計
-(setq display-time-day-and-date t) ; 時間と日付を表示
-(setq display-time-24hr-format t) ; 時間を24時間表示
+(setq display-time-format "| %m/%d %H:%M |") ; 時計のフォーマットを指定
 (display-time-mode t) ; 時計を表示
 
 ;;
@@ -45,12 +55,15 @@
 (setq straight-use-package-by-default t)
 
 ;; package 導入
-(use-package anything)
-;(use-package egg)
-(use-package magit)
-;(use-package emoji)
+(when (executable-find "git") (use-package magit))
+(use-package markdown-mode) ; https://jblevins.org/projects/markdown-mode/
 (use-package multi-term)
-(use-package search-web)
+
+;; Helm
+(use-package helm)
+(use-package helm-descbinds)
+(define-key global-map (kbd "M-y") 'helm-show-kill-ring) ; M-y で Helm の kill ring 表示
+(define-key global-map (kbd "C-x C-f") 'helm-for-files) ; C-x C-f を Helm に置き換え
 
 ;; auto-complete
 (use-package auto-complete)
@@ -60,4 +73,41 @@
   (setq ac-use-menu-map t)
   (setq ac-ignore-case nil))
 
+;; hilight-parentheses
+;; https://www.emacswiki.org/emacs/HighlightParentheses
+(use-package highlight-parentheses)
+(define-globalized-minor-mode global-highlight-parentheses-mode
+  highlight-parentheses-mode
+  (lambda ()
+    (highlight-parentheses-mode t)))
+(global-highlight-parentheses-mode t)
 
+;; WakaTime
+;; pip install wakatime
+;; write API key in ~/.wakatime.cfg
+(use-package wakatime-mode)
+(global-wakatime-mode)
+
+;; Emoji with auto-complete
+;; Enable in text-mode and Markdown mode
+;; Need Markdown mode package
+(use-package ac-emoji)
+(add-to-list 'ac-modes 'text-mode)
+(add-to-list 'ac-modes 'markdown-mode)
+(add-hook 'text-mode-hook 'ac-emoji-setup)
+(add-hook 'markdown-mode-hook 'ac-emoji-setup)
+
+;; search-web
+(use-package search-web)
+(defalias 'web-search 'search-web) ; web-search をエイリアスに設定
+
+;; C-o で URL を開くか単語を検索
+(defun open-url ()
+  (interactive)
+  (let* ((url (thing-at-point 'url)))
+    (message url)
+    (if url
+        (shell-command (concat "open " url))
+      (search-web "google" (current-word)))))
+
+(define-key global-map (kbd "C-o") 'open-url)
