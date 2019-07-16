@@ -54,6 +54,13 @@
 (straight-use-package 'use-package)
 (setq straight-use-package-by-default t)
 
+;; MELPA など追加 (for SKK)
+(setq package-archives
+      '(("gnu" . "http://elpa.gnu.org/packages/")
+        ("melpa" . "http://melpa.org/packages/")
+        ("org" . "http://orgmode.org/elpa/")))
+(package-initialize)
+
 ;; package 導入
 (when (executable-find "git") (use-package magit))
 (use-package markdown-mode) ; https://jblevins.org/projects/markdown-mode/
@@ -96,6 +103,20 @@
 (add-to-list 'ac-modes 'markdown-mode)
 (add-hook 'text-mode-hook 'ac-emoji-setup)
 (add-hook 'markdown-mode-hook 'ac-emoji-setup)
+
+;; SKK
+;; C-x j または C-x C-j で IM を ON
+;; q でカタカナに切り換え
+;; l で英字に切り換え
+(use-package ddskk
+  :ensure t
+  :defer t
+  :bind (("C-x j"   . skk-mode)
+         ("C-x C-j" . skk-mode))
+  :init (require 'ccc))
+(define-key global-map (kbd "C-x C-j") 'skk-mode) ; 上記の use-package のマクロで効かないので再度
+;(use-package ac-skk) ; 使いかたが分からなかった https://github.com/myuhe/ac-skk.el https://lurdan.hatenablog.com/entry/20171225/1514129460
+;(ac-skk-enable)
 
 ;; search-web
 (use-package search-web)
