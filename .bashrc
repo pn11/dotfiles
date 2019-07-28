@@ -155,5 +155,11 @@ if [ `which yarn` ]; then
     export PATH="$PATH:`yarn global bin`"
 fi
 
+# For Linuxbrew
+
+if [ -d /home/linuxbrew ]; then
+    eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+fi
+
 # Temp
 export PATH=$PATH:$HOME/git/OkaScripts/bin

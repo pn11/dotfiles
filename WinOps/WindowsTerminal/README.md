@@ -14,3 +14,4 @@ Microsoft Store からインストールする。
 
 `"ctrl+w"` を `"ctrl+shift+w"` に、 `"ctrl+t"` を `"ctrl+shift+t"` に変更したのが [`profiles.json`](profiles.json).
 
+`install.bat`を実行すればコピーされる。
