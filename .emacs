@@ -30,7 +30,7 @@
 (display-time-mode t) ; 時計を表示
 
 ;;
-;; straight.el
+;; straight.el (>=Emacs 24.4)
 ;; https://github.com/raxod502/straight.el
 ;; https://nukosuke.hatenablog.jp/entry/straight-el
 ;;
