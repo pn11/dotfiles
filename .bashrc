@@ -59,9 +59,9 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]'
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w'
 fi
 unset color_prompt force_color_prompt
 
@@ -156,10 +156,41 @@ if [ `which yarn` ]; then
 fi
 
 # For Linuxbrew
-
 if [ -d /home/linuxbrew ]; then
     eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 fi
+
+export NO_PROXY=localhost,127.0.0.1
+# git-prompt and git-complete
+# https://qiita.com/varmil/items/9b0aeafa85975474e9b6
+if [ -f ~/.git-complete.bash ]; then
+    source ~/.git-completion.bash
+fi
+if [ -f ~/.git-prompt.sh ]; then
+    source ~/.git-prompt.sh
+fi
+
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWUPSTREAM=1
+GIT_PS1_SHOWUNTRACKEDFILES=
+GIT_PS1_SHOWSTASHSTATE=1
+
+############### ターミナルのコマンド受付状態の表示変更
+# \u ユーザ名
+# \h ホスト名
+# \W カレントディレクトリ
+# \w カレントディレクトリのパス
+# \n 改行
+# \d 日付
+# \[ 表示させない文字列の開始
+# \] 表示させない文字列の終了
+# \$ $
+# PS1 はその場で評価して欲しいため double quote
+# __git_ps1 は lazy eval して欲しいため single quote
+export PS1="$PS1"'\[\033[1;31m\]$(__git_ps1)\[\033[00m\] \$ '
+
+##############
+
 
 # Temp
 export PATH=$PATH:$HOME/git/OkaScripts/bin

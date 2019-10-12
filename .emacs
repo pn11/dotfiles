@@ -104,6 +104,7 @@
 (add-hook 'text-mode-hook 'ac-emoji-setup)
 (add-hook 'markdown-mode-hook 'ac-emoji-setup)
 
+(setq viper-mode nil)
 ;; SKK
 ;; C-x j または C-x C-j で IM を ON
 ;; q でカタカナに切り換え
@@ -117,6 +118,10 @@
 (define-key global-map (kbd "C-x C-j") 'skk-mode) ; 上記の use-package のマクロで効かないので再度
 ;(use-package ac-skk) ; 使いかたが分からなかった https://github.com/myuhe/ac-skk.el https://lurdan.hatenablog.com/entry/20171225/1514129460
 ;(ac-skk-enable)
+
+;; rectangle edit
+;(cua-mode t)
+;(setq cua-enable-cua-keys nil)
 
 ;; search-web
 (use-package search-web)

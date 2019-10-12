@@ -1,2 +1,8 @@
 alias lsusb="system_profiler SPUSBDataType"
 alias ldd="otool -L"
+
+# https://qiita.com/toyama0919/items/661437d86a95b02484a2
+alias readlink='greadlink'
+alias awk='gawk'
+alias sed='gsed'
+alias date='gdate'
