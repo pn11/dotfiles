@@ -25,6 +25,8 @@ alias dkrun="docker run -it --rm"
 alias gterm="gnome-terminal"
 alias gnuplotp="gnuplot -persist"
 alias rubyNoWarn="ruby -W0"
+alias activate="source venv/bin/activate"
+alias rmbac="rm *~"
 
 if [ `which bat` ];then
     alias cat=bat
