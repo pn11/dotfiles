@@ -19,6 +19,8 @@ alias lns="ln -s"
 alias weather="curl wttr.in/Kyoto"
 alias rsync_easy="rsync -ahvtr"
 alias tar_easy="tar zxvf"
+alias up="cd ../"
+alias upup="cd ../../"
 
 alias portcheck="nc -vz"
 alias dkrun="docker run -it --rm"
