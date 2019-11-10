@@ -130,19 +130,23 @@ else
 fi
 
 # For Mac
-if [ `uname` == "Darwin" ]
-then
+if [ `uname` == "Darwin" ] ; then
     if [ -f ~/.bashrc_mac ] ; then
         . ~/.bashrc_mac
     fi
 
 # For WSL
-elif [[ `uname -a` =~ Linux && `uname -a` =~ Microsoft ]]
-then
+elif [[ `uname -a` =~ Linux && `uname -a` =~ Microsoft ]] ; then
     if [ -f ~/.bashrc_wsl ] ; then
         . ~/.bashrc_wsl
     fi
+# For Ubuntu
+elif [[ `uname -a` =~ "Ubuntu" ]] ; then
+    if [ -f ~/.bashrc_ubuntu ] ; then
+        . ~/.bashrc_ubuntu
+    fi
 fi
+
 
 # Local setting
 if [ -f ~/.bashrc_local ]

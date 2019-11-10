@@ -3,6 +3,7 @@
 .bashrc
 .bashrc_mac
 .bashrc_wsl
+.bashrc_ubuntu
 .emacs
 .screenrc
 .tmux.conf
