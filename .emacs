@@ -60,6 +60,7 @@
         ("melpa" . "http://melpa.org/packages/")
         ("org" . "http://orgmode.org/elpa/")))
 (package-initialize)
+;;(package-refresh-contents) ; Takes long time
 
 ;; package 導入
 (when (executable-find "git") (use-package magit))
@@ -122,6 +123,40 @@
 ;; rectangle edit
 ;(cua-mode t)
 ;(setq cua-enable-cua-keys nil)
+
+; yasnippet
+; Quma-style key bindings
+; https://www-he.scphys.kyoto-u.ac.jp/member/shotakaha/dokuwiki/doku.php?id=toolbox:emacs:yasnippet:start#%E8%A8%AD%E5%AE%9A
+(use-package yasnippet
+  :ensure t
+  :diminish yas-minor-mode
+  :bind (:map yas-minor-mode-map
+
+              ("C-x i i" . yas-insert-snippet)
+              ("C-x i n" . yas-new-snippet)
+              ("C-x i v" . yas-visit-snippet-file)
+              ("C-x i l" . yas-describe-tables)
+              ("C-x i g" . yas-reload-all))
+  :config
+  (yas-global-mode 1)
+  (setq yas-prompt-functions '(yas-ido-prompt))
+  )
+(use-package yasnippet-snippets)
+(define-key global-map (kbd "C-c C-s") 'yas-insert-snippet)
+
+; elpy
+(use-package elpy
+  :ensure t
+  :init
+  (elpy-enable)
+  (setq elpy-rpc-python-command "python3"
+        python-shell-interpreter "jupyter"
+        python-shell-interpreter-args "console --simple-prompt"
+        python-shell-prompt-detect-failure-warning nil)
+  (add-to-list 'python-shell-completion-native-disabled-interpreters
+               "jupyter")
+  )
+
 
 ;; search-web
 (use-package search-web)
