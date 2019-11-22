@@ -9,6 +9,8 @@
   df = diff
   ls = ls-files
   ll = ls-files -v
+  l = log
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   mas = checkout master
   master = checkout master
   dev = checkout develop
@@ -16,12 +18,12 @@
   # https://yulii.github.io/git-wip-alias-20160206.html
   wip = "commit --allow-empty -m '[ci skip] wip commit'"
 
-
 [include]
-	path = ~/.gitconfig_user
+  path = ~/.gitconfig_user
 
 [core]
-	excludesfile = ~/.gitignore_global
+  excludesfile = ~/.gitignore_global
+  editor = emacsclient -t -a=\\\"\\\"
 
 [alias]
   st = status
