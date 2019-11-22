@@ -63,7 +63,9 @@
 ;; package 導入
 (when (executable-find "git") 
   (use-package 
-    magit))
+    magit) 
+  (use-package 
+    git-commit))
 (use-package 
   markdown-mode)        ; https://jblevins.org/projects/markdown-mode/
 (use-package 
