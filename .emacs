@@ -102,8 +102,11 @@
 (use-package ac-emoji)
 (add-to-list 'ac-modes 'text-mode)
 (add-to-list 'ac-modes 'markdown-mode)
+(add-to-list 'ac-modes git-commit-mode)
 (add-hook 'text-mode-hook 'ac-emoji-setup)
 (add-hook 'markdown-mode-hook 'ac-emoji-setup)
+(add-hook 'git-commit-mode-hook 'ac-emoji-setup)
+
 
 (setq viper-mode nil)
 ;; SKK
@@ -156,6 +159,31 @@
   (add-to-list 'python-shell-completion-native-disabled-interpreters
                "jupyter")
   )
+
+
+;;; Formatter
+;;;  https://github.com/purcell/reformatter.el
+;;;  https://erick.navarro.io/blog/creating-an-emacs-formatter-the-easy-way/
+(use-package reformatter)
+;;; XML
+(reformatter-define xml-format
+  :program "xmllint"
+  :args '("--pretty" "1" "-") ; 標準入力から読む
+  )
+(add-hook 'nxml-mode-hook
+          (lambda()
+          (define-key nxml-mode-map (kbd "C-c C-f") 'xml-format-buffer)))
+;;; Elisp
+(use-package
+    elisp-format)
+(define-key emacs-lisp-mode-map (kbd "C-c C-f") 'elisp-format-buffer)
+
+
+;;; Projectile https://github.com/bbatsov/projectile
+(use-package
+    projectile
+  :diminish projectile-mode)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
 
 ;; search-web
