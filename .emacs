@@ -111,8 +111,7 @@
 (use-package
   markdown-mode)        ; https://jblevins.org/projects/markdown-mode/
 ;;; Markdown mode で link を辿るキーバインド
-(define-key markdown-mode-map (kbd "C-j") 'markdown-follow-link-at-point)
-(define-key markdown-mode-map (kbd "C-m") 'markdown-follow-link-at-point)
+(define-key markdown-mode-map (kbd "C-o") 'markdown-follow-link-at-point)
 
 (use-package
   multi-term)
