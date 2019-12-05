@@ -182,6 +182,8 @@
 
 ;;; rectangle edit
 ;;; 矩形選択の default key binding (C-RET) は Teminal では動かないため C-X SPC を割り当てる
+(cua-mode t)
+(setq cua-enable-cua-keys nil)
 (define-key global-map (kbd "C-x SPC") 'cua-set-rectangle-mark)
 
 ;;; yasnippet

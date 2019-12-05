@@ -15,6 +15,9 @@
   master = checkout master
   dev = checkout develop
   develop = checkout develop
+  amend = commit --amend
+  unadd = reset HEAD
+  unstage = reset HEAD
   # https://yulii.github.io/git-wip-alias-20160206.html
   wip = "commit --allow-empty -m '[ci skip] wip commit'"
 
