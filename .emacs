@@ -204,8 +204,9 @@
 (use-package
   yasnippet-snippets)
 (define-key global-map (kbd "C-c C-s") 'yas-insert-snippet)
-
-                                        ; elpy
+(define-key global-map (kbd "C-c C-s") 'yas-insert-snippet)
+(defalias 'insert-snippet 'yas-insert-snippet)
+;;; elpy
 (use-package
   elpy
   :ensure t
