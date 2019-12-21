@@ -71,6 +71,11 @@
 ;; 他で更新されたら自動で再読み込み
 (global-auto-revert-mode 1)
 
+(setq-default ispell-program-name "aspell")
+;; Ignore TeX commands in Aspell https://texwiki.texjp.org/?Aspell#aemcsfoi
+(eval-after-load "ispell"
+   '(add-to-list 'ispell-skip-region-alist '("[^\000-\377]+")))
+
 ;;;
 ;;; straight.el (>=Emacs 24.4)
 ;;; https://github.com/raxod502/straight.el
