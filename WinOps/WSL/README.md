@@ -1,6 +1,12 @@
 # WSL
 
-WSL2が出たらいろいろ変わりそう。
+以下を実行して初期設定する。
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/pn11/dotfiles/master/WinOps/WSL/init.sh
+```
+
+以下 WSL についてのメモ。WSL2が出たらいろいろ変わりそう。
 
 ## パーミッションまわり
 
@@ -8,11 +14,11 @@ WSL2が出たらいろいろ変わりそう。
 
 ## ターミナル
 
-wsl terminal を使う。
+~~wsl terminal を使う。~~ まだ不満は多いものの今後に期待ということで Windows Terminal を使っている。
 
 ## Git
 
-WSL の Git を VSCode で使うので、 `install_wslgit.sh` を実行する。ただし WSLGit は現状かなり遅い。WSL2に期待。
+~~WSL の Git を VSCode で使うので、 `install_wslgit.sh` を実行する。ただし WSLGit は現状かなり遅い。WSL2に期待。~~ VSCode Remote で WSL の git が使えるようになった。 
 
 ## 環境変数
 
