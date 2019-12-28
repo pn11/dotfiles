@@ -18,7 +18,7 @@ def link(filename)
   pwd = `pwd`.chomp
   
   if File.exist?(target)
-    puts "#{target} exists. Instllation canceled."
+    puts "#{target} exists. Installation canceled."
    
   else
     `ln -s #{pwd}/#{filename} #{target}`
