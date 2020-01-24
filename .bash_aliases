@@ -1,11 +1,5 @@
 #!/bin/bash
 
-alias bashrc="emacs -nw ~/.bashrc"
-alias emacsn="emacs -nw"
-alias nemacs="emacs -nw"
-alias neamcs="emacs -nw"
-alias neamcs="emacs -nw"
-
 alias gr=grep
 alias exclude="grep -v"
 alias ll='ls -alF'
@@ -31,12 +25,11 @@ alias activate="source venv/bin/activate"
 alias rmbac="rm *~"
 
 if [ `which bat` ];then
-    alias cat=bat
     alias less=bat
 fi
 
 ###Emacs daemon###
-alias emacsd="emacs --daemon"
+alias emacsd="emacs --daemon -l ~/.emacs"
 alias E="emacsclient -t -a \"\""
 alias kill-emacs="emacsclient -e '(kill-emacs)'"
 
@@ -46,3 +39,6 @@ alias kill-emacs="emacsclient -e '(kill-emacs)'"
 alias scls="screen -ls"
 alias scr="screen -r"
 alias scd="screen -d"
+
+###Tmux###
+alias tmux="tmux -u"

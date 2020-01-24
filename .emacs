@@ -128,6 +128,7 @@
   helm-descbinds)
 (define-key global-map (kbd "M-y") 'helm-show-kill-ring) ; M-y で Helm の kill ring 表示
 (define-key global-map (kbd "C-x C-f") 'helm-for-files) ; C-x C-f を Helm に置き換え
+(define-key global-map (kbd "M-x") 'helm-M-x) ; M-x を Helm に置き換え
 
 ;;; auto-complete
 (use-package
