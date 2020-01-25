@@ -74,7 +74,25 @@
 (setq-default ispell-program-name "aspell")
 ;; Ignore TeX commands in Aspell https://texwiki.texjp.org/?Aspell#aemcsfoi
 (eval-after-load "ispell"
-   '(add-to-list 'ispell-skip-region-alist '("[^\000-\377]+")))
+  '(add-to-list 'ispell-skip-region-alist '("[^\000-\377]+")))
+
+;; dired
+;; Thanks to https://qiita.com/l3msh0/items/8665122e01f6f5ef502f
+;; diredを2つのウィンドウで開いている時に、デフォルトの移動orコピー先をもう一方のdiredで開いているディレクトリにする
+(setq dired-dwim-target t)
+;; ディレクトリを再帰的にコピーする
+(setq dired-recursive-copies 'always)
+;; diredバッファでC-sした時にファイル名だけにマッチするように
+(setq dired-isearch-filenames t)
+
+;; dired を起動したときに directory を選ぶのが面倒なので default で起動する
+(defun dired-default-directory ()
+  (interactive)
+  (dired default-directory)
+  )
+(define-key global-map (kbd "C-x C-d") 'dired-default-directory)
+(define-key global-map (kbd "C-x d") 'dired-default-directory)
+
 
 ;;;
 ;;; straight.el (>=Emacs 24.4)
