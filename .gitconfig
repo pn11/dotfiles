@@ -26,8 +26,8 @@
 
 [core]
   excludesfile = ~/.gitignore_global
-#editor = emacsclient -t -a=\\\"\\\"
-  editor = emacs
+#  editor = emacsclient -t -a=\\\"\\\"
+  editor = emacs -q
 
 [alias]
   st = status

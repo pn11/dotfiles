@@ -31,7 +31,7 @@ fi
 
 ###Emacs daemon###
 alias emacsd="emacs --daemon -l ~/.emacs"
-alias E="emacsclient -t -a \"\""
+alias E="emacsclient -t -a \"emacs --daemon -l ~/.emacs\""
 alias kill-emacs="emacsclient -e '(kill-emacs)'"
 
 ###screen###
