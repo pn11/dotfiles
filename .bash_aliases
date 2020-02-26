@@ -22,6 +22,7 @@ alias gterm="gnome-terminal"
 alias gnuplotp="gnuplot -persist"
 alias rubyNoWarn="ruby -W0"
 alias activate="source venv/bin/activate"
+alias act="activate"
 alias rmbac="rm *~"
 alias check_latest="ls -l1r | head -1 | xargs tail -f"
 
@@ -31,6 +32,8 @@ fi
 
 ###Emacs daemon###
 alias emacsd="emacs --daemon -l ~/.emacs"
+# emacsclient -t -a "" で alternative editor = "" だと daemon を自動起動するが、
+# load path を指定すると client が起動してくれない。
 alias E="emacsclient -t -a \"emacs --daemon -l ~/.emacs\""
 alias kill-emacs="emacsclient -e '(kill-emacs)'"
 
