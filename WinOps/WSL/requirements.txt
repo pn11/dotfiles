@@ -1,0 +1,9 @@
+autopep8
+libxml2-python
+numpy
+pandas
+pycodestyle
+python-dateutil
+pytz
+six
+wakatime

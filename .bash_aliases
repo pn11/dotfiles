@@ -1,11 +1,5 @@
 #!/bin/bash
 
-alias bashrc="emacs -nw ~/.bashrc"
-alias emacsn="emacs -nw"
-alias nemacs="emacs -nw"
-alias neamcs="emacs -nw"
-alias neamcs="emacs -nw"
-
 alias gr=grep
 alias exclude="grep -v"
 alias ll='ls -alF'
@@ -28,16 +22,19 @@ alias gterm="gnome-terminal"
 alias gnuplotp="gnuplot -persist"
 alias rubyNoWarn="ruby -W0"
 alias activate="source venv/bin/activate"
+alias act="activate"
 alias rmbac="rm *~"
+alias check_latest="ls -l1r | head -1 | xargs tail -f"
 
 if [ `which bat` ];then
-    alias cat=bat
     alias less=bat
 fi
 
 ###Emacs daemon###
-alias emacsd="emacs --daemon"
-alias E="emacsclient -t -a \"\""
+alias emacsd="emacs --daemon -l ~/.emacs"
+# emacsclient -t -a "" で alternative editor = "" だと daemon を自動起動するが、
+# load path を指定すると client が起動してくれない。
+alias E="emacsclient -t -a \"emacs --daemon -l ~/.emacs\""
 alias kill-emacs="emacsclient -e '(kill-emacs)'"
 
 ###screen###
@@ -46,3 +43,6 @@ alias kill-emacs="emacsclient -e '(kill-emacs)'"
 alias scls="screen -ls"
 alias scr="screen -r"
 alias scd="screen -d"
+
+###Tmux###
+alias tmux="tmux -u"
