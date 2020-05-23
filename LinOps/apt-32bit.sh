@@ -7,7 +7,8 @@ sudo apt-get install \
      ruby \
      emacs \
      skktools \
-     tmux
+     tmux \
+     gparted
 
 pip3 install \
      wakatime \
