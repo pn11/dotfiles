@@ -4,7 +4,7 @@
 .bashrc_mac
 .bashrc_wsl
 .bashrc_ubuntu
-.emacs
+.emacs.d
 .screenrc
 .tmux.conf
 .gitconfig

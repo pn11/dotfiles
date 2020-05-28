@@ -132,7 +132,7 @@
                          ("melpa" . "http://melpa.org/packages/") 
                          ("org" . "http://orgmode.org/elpa/")))
 (package-initialize)
-;;;(package-refresh-contents) ; Takes long time
+(package-refresh-contents) ; Takes long time
 
 ;;; package 導入
 (when (executable-find "git") 

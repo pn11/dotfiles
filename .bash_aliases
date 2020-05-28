@@ -31,10 +31,11 @@ if [ `which bat` ];then
 fi
 
 ###Emacs daemon###
-alias emacsd="emacs --daemon -l ~/.emacs"
+alias emacsd="emacs --daemon"
 # emacsclient -t -a "" で alternative editor = "" だと daemon を自動起動するが、
 # load path を指定すると client が起動してくれない。
-alias E="emacsclient -t -a \"emacs --daemon -l ~/.emacs\""
+#alias E="emacsclient -t -a \"emacs --daemon -l ~/.emacs\""
+alias E="emacsclient -t -a \"emacs --daemon\""
 alias kill-emacs="emacsclient -e '(kill-emacs)'"
 
 ###screen###
