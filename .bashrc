@@ -164,6 +164,7 @@ fi
 # For Linuxbrew
 if [ -d /home/linuxbrew ]; then
     eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+    source "$(brew --prefix)/etc/bash_completion.d/*"
 fi
 
 export NO_PROXY=localhost,127.0.0.1
