@@ -4,6 +4,7 @@
 [alias]
   st = status
   sta = status
+  stat = status
   cm = commit
   cma = commit -a
   df = diff
@@ -20,6 +21,13 @@
   unstage = reset HEAD
   # https://yulii.github.io/git-wip-alias-20160206.html
   wip = "commit --allow-empty -m '[ci skip] wip commit'"
+  br = branch
+  name = config --get user.name
+  mail = config --get user.email
+  getname = name
+  getmail = mail
+  setname = config --local --add user.name
+  setmail = config --local --add user.email
 
 [include]
   path = ~/.gitconfig_user
@@ -28,9 +36,3 @@
   excludesfile = ~/.gitignore_global
 #  editor = emacsclient -t -a=\\\"\\\"
   editor = emacs -q
-
-[alias]
-  st = status
-  br = branch
-  cm = commit
-  cma = commit -a
