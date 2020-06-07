@@ -1,5 +1,8 @@
+0xed
 adobe-acrobat-reader
 adoptopenjdk8
+appcleaner
+biscuit
 cyberduck
 dash
 day-o
@@ -7,6 +10,8 @@ db-browser-for-sqlite
 docker
 drawio
 eclipse-ide
+google-chrome
+google-japanese-ime
 gyazo
 hyperswitch
 iterm2
@@ -14,6 +19,7 @@ karabiner-elements
 keycastr
 lastfm
 licecap
+macdown
 nextcloud
 open-in-code
 pycharm-ce
@@ -21,4 +27,9 @@ simplenote
 sizeup
 skim
 skitch
+slack
 teamviewer
+visual-studio-code
+webex-meetings
+webex-teams
+xquartz
