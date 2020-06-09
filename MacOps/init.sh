@@ -1,7 +1,9 @@
 #!/bin/bash
 
 ## Homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+if [ ! -e ~/.brew ]; then
+    git clone --depth=1 https://github.com/Homebrew/brew.git
+fi
 
 if [ ! -e ~/git ]; then
     mkdir ~/git
@@ -38,4 +40,4 @@ pushd dotfiles/MacOps
 brew update
 cat Homebrew/mojave.brew.list | xargs brew install
 cat Homebrew/mojave.cask.list | xargs brew cask install
-cat Homebrew/mojave.mas.list | xargs mas install
+cat Homebrew/mojave.mas.list | awk '{print $1}' | xargs mas install
