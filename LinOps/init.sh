@@ -1,6 +1,7 @@
 #!/bin/bash
 # このファイルはインターネットからダウンロードして実行することを意図しているため、
 # 処理を細かくファイルに分けるのではなく、なるべくこのファイルだけで完結するようにする
+# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/pn11/dotfiles/master/LinOps/init.sh)"
 
 sudo apt-get update
 sudo apt-get install -y build-essential curl file git

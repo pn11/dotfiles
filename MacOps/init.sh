@@ -1,4 +1,5 @@
 #!/bin/bash
+# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/pn11/dotfiles/master/MacOps/init.sh)"
 
 ## Homebrew
 if [ ! -e ~/.brew ]; then
