@@ -5,16 +5,11 @@
 sudo apt-get update
 sudo apt-get install -y build-essential curl file git
 
-if [ ! -e /home/linuxbrew/.linuxbrew ] && [ ! -e ~/.linuxbrew ]; then
-    echo "Installing Linuxbrew"
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
-fi
+if [ ! -e ~/.brew ]; then
+    mkdir ~/.brew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C ~/.brew
 
-PATH=~/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/bin:$PATH
+PATH=~/.brew/bin:$PATH
 curl -fsSL https://raw.githubusercontent.com/pn11/dotfiles/master/WinOps/WSL/brew.list.MateBook | xargs brew install
-
-
-PATH=~/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/bin:$PATH
 
 if [ ! -e ~/git ]; then
     mkdir ~/git
