@@ -8,6 +8,7 @@ sudo apt-get install -y build-essential curl file git
 
 if [ ! -e ~/.brew ]; then
     mkdir ~/.brew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C ~/.brew
+fi
 
 PATH=~/.brew/bin:$PATH
 curl -fsSL https://raw.githubusercontent.com/pn11/dotfiles/master/WinOps/WSL/brew.list.MateBook | xargs brew install
