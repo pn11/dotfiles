@@ -120,6 +120,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# bash completion
+for file in $(ls -d1 ~/.bash_completion.d/* | grep -v README.md | grep -v .gitignore); do
+    source $file
+done
 
 # DISPLAY環境変数が設定されていなかったら SSH クライアントを出力先に設定
 # この [ -v ] は bash 4.2 で追加。cf. https://luna2-linux.blogspot.com/2014/05/bash.html
@@ -174,11 +178,9 @@ if [ -d $HOME/.brew ]; then
 fi
 
 export NO_PROXY=localhost,127.0.0.1
-# git-prompt and git-complete
+
+# git-prompt
 # https://qiita.com/varmil/items/9b0aeafa85975474e9b6
-if [ -f ~/.git-complete.bash ]; then
-    source ~/.git-completion.bash
-fi
 if [ -f ~/.git-prompt.sh ]; then
     source ~/.git-prompt.sh
 fi
