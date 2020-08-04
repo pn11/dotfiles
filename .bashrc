@@ -156,6 +156,14 @@ then
     source ~/.bashrc_local
 fi
 
+if [ -d $HOME/.local/bin ]; then
+    export PATH="$HOME/.local/bin:$PATH:"
+fi
+
+if [ -d $HOME/local/bin ]; then
+    export PATH="$HOME/.local/bin:$PATH:"
+fi
+
 # For yarn
 if command -v yarn >>/dev/null 2>&1; then
     export PATH="$PATH:`yarn global bin`"
