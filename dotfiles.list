@@ -3,8 +3,8 @@
 .bash_profile
 .bashrc
 .bashrc_mac
-.bashrc_wsl
 .bashrc_ubuntu
+.bashrc_wsl
 .emacs.d
 .screenrc
 .tmux.conf

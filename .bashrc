@@ -4,8 +4,8 @@ case $- in
       *) return;;
 esac
 
-
-
+# history をコマンド実行ごとに同期
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 # append to the history file, don't overwrite it
 shopt -s histappend
 
@@ -175,6 +175,10 @@ fi
 if [ -d $HOME/.brew ]; then
     eval $($HOME/.brew/bin/brew shellenv)
     source $(brew --prefix)/etc/bash_completion.d/*
+    export PATH="/Users/oka/.brew/opt/ruby/bin:$PATH"
+    export LDFLAGS="-L/Users/oka/.brew/opt/ruby/lib"
+    export CPPFLAGS="-I/Users/oka/.brew/opt/ruby/include"
+    export PKG_CONFIG_PATH="/Users/oka/.brew/opt/ruby/lib/pkgconfig"
 fi
 
 export NO_PROXY=localhost,127.0.0.1
