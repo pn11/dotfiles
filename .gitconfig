@@ -36,3 +36,9 @@
   excludesfile = ~/.gitignore_global
 #  editor = emacsclient -t -a=\\\"\\\"
   editor = emacs -q
+
+[pager]
+  # EUC-JP などの文字化け回避
+  diff = nkf -w | less
+  log = nkf -w | less
+  show = nkf -w | less
