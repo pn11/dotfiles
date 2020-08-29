@@ -161,7 +161,7 @@ if [ -d $HOME/.local/bin ]; then
 fi
 
 if [ -d $HOME/local/bin ]; then
-    export PATH="$HOME/.local/bin:$PATH:"
+    export PATH="$HOME/local/bin:$PATH:"
 fi
 
 # For yarn
