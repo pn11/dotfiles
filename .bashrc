@@ -4,8 +4,8 @@ case $- in
       *) return;;
 esac
 
-
-
+# history をコマンド実行ごとに同期
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 # append to the history file, don't overwrite it
 shopt -s histappend
 
@@ -120,6 +120,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# bash completion
+for file in $(ls -d1 ~/.bash_completion.d/* | grep -v README.md | grep -v .gitignore); do
+    source $file
+done
 
 # DISPLAY環境変数が設定されていなかったら SSH クライアントを出力先に設定
 # この [ -v ] は bash 4.2 で追加。cf. https://luna2-linux.blogspot.com/2014/05/bash.html
@@ -179,14 +183,16 @@ fi
 if [ -d $HOME/.brew ]; then
     eval $($HOME/.brew/bin/brew shellenv)
     source $(brew --prefix)/etc/bash_completion.d/*
+    export PATH="/Users/oka/.brew/opt/ruby/bin:$PATH"
+    export LDFLAGS="-L/Users/oka/.brew/opt/ruby/lib"
+    export CPPFLAGS="-I/Users/oka/.brew/opt/ruby/include"
+    export PKG_CONFIG_PATH="/Users/oka/.brew/opt/ruby/lib/pkgconfig"
 fi
 
 export NO_PROXY=localhost,127.0.0.1
-# git-prompt and git-complete
+
+# git-prompt
 # https://qiita.com/varmil/items/9b0aeafa85975474e9b6
-if [ -f ~/.git-complete.bash ]; then
-    source ~/.git-completion.bash
-fi
 if [ -f ~/.git-prompt.sh ]; then
     source ~/.git-prompt.sh
 fi

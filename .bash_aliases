@@ -47,3 +47,12 @@ alias scd="screen -d"
 
 ###Tmux###
 alias tmux="tmux -u"
+
+###Docker###
+alias dcon="docker-compose"
+alias dcup="docker-compose up"
+alias dcdown="docker-compose down"
+alias dcps="docker-compose ps"
+alias dclogs="docker-compose logs"
+alias dclog="dclogs"
+alias dcexec="docker-compose exec"
