@@ -56,3 +56,6 @@ alias dcps="docker-compose ps"
 alias dclogs="docker-compose logs"
 alias dclog="dclogs"
 alias dcexec="docker-compose exec"
+
+alias journal="E +999999 ~/git/OkaNotes/2020/journal.md"
+alias j=journal
