@@ -67,3 +67,6 @@ alias dcexec="docker-compose exec"
 
 alias journal="E +999999 ~/git/OkaNotes/2020/journal.md"
 alias j=journal
+
+### Docker ###
+alias venv="python3 -m venv"
