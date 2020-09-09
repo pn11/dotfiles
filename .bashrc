@@ -168,6 +168,13 @@ if [ -d $HOME/local/bin ]; then
     export PATH="$HOME/local/bin:$PATH:"
 fi
 
+# For pyenv
+if [ -d $HOME/.pyenv ]; then
+    export PYENV_ROOT="$HOME/.pyenv"
+    export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init -)"
+fi
+
 # For yarn
 if command -v yarn >>/dev/null 2>&1; then
     export PATH="$PATH:`yarn global bin`"

@@ -23,7 +23,13 @@ alias dkrun="docker run -it --rm"
 alias gterm="gnome-terminal"
 alias gnuplotp="gnuplot -persist"
 alias rubyNoWarn="ruby -W0"
-alias activate="source venv/bin/activate"
+alias activate="if [ -e venv/bin/activate ]; then \
+  source venv/bin/activate; \
+elif [ -d node_modules/.bin ]; then \
+  PATH=$(pwd)/node_modules/.bin:$PATH; \
+else
+  echo 'Do nothing.'; \
+fi"
 alias act="activate"
 alias rmbac="rm *~"
 alias check_latest="ls -l1r | head -1 | xargs tail -f"
