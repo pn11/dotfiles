@@ -115,6 +115,9 @@
   :diminish projectile-mode)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
+(use-package
+  vue-mode)
+
 ;;; search-web
 (use-package 
   search-web)
