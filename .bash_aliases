@@ -19,7 +19,6 @@ alias gi="git"
 alias extract="dtrx"
 
 alias portcheck="nc -vz"
-alias dkrun="docker run -it --rm"
 alias gterm="gnome-terminal"
 alias gnuplotp="gnuplot -persist"
 alias rubyNoWarn="ruby -W0"
@@ -57,6 +56,7 @@ alias scd="screen -d"
 alias tmux="tmux -u"
 
 ###Docker###
+alias dkrun="docker run -it --rm"
 alias dcon="docker-compose"
 alias dcup="docker-compose up"
 alias dcdown="docker-compose down"
@@ -64,9 +64,11 @@ alias dcps="docker-compose ps"
 alias dclogs="docker-compose logs"
 alias dclog="dclogs"
 alias dcexec="docker-compose exec"
+alias docker-kill-all="docker ps | awk '{print \$1}' | grep -v 'CONTAINER' | xargs docker kill"
+alias docker-rm-all="docker ps -a | awk '{print \$1}' | grep -v 'CONTAINER' | xargs docker rm"
 
 alias journal="E +999999 ~/git/OkaNotes/2020/journal.md"
 alias j=journal
 
-### Docker ###
+### Python ###
 alias venv="python3 -m venv"
