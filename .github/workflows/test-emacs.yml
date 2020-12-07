@@ -1,0 +1,20 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  test-emavs:
+    name: Test Emacs init.el
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-16.04, ubuntu-18.04, ubuntu-20.04]
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+      - name: Install Emacs
+        run: sudo apt-get -y update && sudo apt-get -y install emacs-nox
+      - name: Test init.el
+        run: emacs --script .emacs.d/init.el 
