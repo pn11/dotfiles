@@ -16,5 +16,7 @@ jobs:
         uses: actions/checkout@master
       - name: Install Emacs
         run: sudo apt-get -y update && sudo apt-get -y install emacs-nox
+      - name: check Emacs version
+        run: emacs --version
       - name: Test init.el
-        run: emacs --debug-init
+        run: emacs --daemon --debug-init
