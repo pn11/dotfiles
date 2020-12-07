@@ -1,10 +1,17 @@
 *~
 .DS_Store
 node_modules
+## Python
 venv
 __pycache__
 *.pyc
 .ipynb_checkpoints
+
 *.o
+
+# Emacs backup file
 \#*
 .\#*
+
+# Java
+.factorypath

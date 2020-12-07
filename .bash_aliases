@@ -33,6 +33,7 @@ alias act="activate"
 alias rmbac="rm *~"
 alias check_latest="ls -l1r | head -1 | xargs tail -f"
 
+# If bat is installed, use it instead of less
 if command -v bat >>/dev/null 2>&1; then
     alias less=bat
 fi
