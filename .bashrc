@@ -153,13 +153,7 @@ elif [[ `uname -a` =~ "Ubuntu" ]] ; then
     fi
 fi
 
-
-# Local setting
-if [ -f ~/.bashrc_local ]
-then
-    source ~/.bashrc_local
-fi
-
+# Some PATH
 if [ -d $HOME/.local/bin ]; then
     export PATH="$HOME/.local/bin:$PATH:"
 fi
