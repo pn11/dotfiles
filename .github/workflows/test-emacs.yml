@@ -15,7 +15,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@master
       - name: Install Emacs
-        run: sudo apt-get -y update && sudo apt-get -y install emacs-nox
+        run: sudo apt-get -y update && sudo apt-get -y install emacs-nox git python3-venv
       - name: check Emacs version
         run: emacs --version
       - name: install dotfiles
