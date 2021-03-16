@@ -169,6 +169,11 @@ if [ -d $HOME/.pyenv ]; then
     eval "$(pyenv init -)"
 fi
 
+# For Poetry
+if [ -d $HOME/.poetry ]; then
+    export PATH="$HOME/.poetry/bin:$PATH"
+fi
+
 # For yarn
 if command -v yarn >>/dev/null 2>&1; then
     export PATH="$PATH:`yarn global bin`"
