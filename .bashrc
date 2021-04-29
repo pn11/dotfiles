@@ -179,6 +179,11 @@ if command -v yarn >>/dev/null 2>&1; then
     export PATH="$PATH:`yarn global bin`"
 fi
 
+# For Cargo
+if [ -d $HOME/.cargo ]; then
+    export PATH="$HOME/.cargo/bin:$PATH"
+fi
+
 # For Linuxbrew
 if [ -d /home/linuxbrew ]; then
     eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
