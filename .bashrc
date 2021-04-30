@@ -142,7 +142,7 @@ if [ `uname` == "Darwin" ] ; then
     fi
 
 # For WSL
-elif [[ `uname -a` =~ Linux && `uname -a` =~ Microsoft ]] ; then
+elif [[ `uname -a` =~ Linux && `uname -a` =~ icrosoft ]] ; then
     if [ -f ~/.bashrc_wsl ] ; then
         . ~/.bashrc_wsl
     fi

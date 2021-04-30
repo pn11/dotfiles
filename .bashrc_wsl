@@ -10,3 +10,6 @@ alias choco=choco.exe
 alias npp="/mnt/c/Program\ Files/Notepad++/notepad++.exe"
 alias ev="/mnt/c/Program\ Files/Everything/Everything.exe -s"
 alias chrome="/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe"
+
+# https://github.com/microsoft/WSL/issues/4106#issuecomment-501885675
+export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0
