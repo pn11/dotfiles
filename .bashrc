@@ -5,7 +5,8 @@ case $- in
 esac
 
 # history をコマンド実行ごとに同期
-export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+#export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+export PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
 # append to the history file, don't overwrite it
 shopt -s histappend
 
@@ -206,6 +207,11 @@ export NO_PROXY=localhost,127.0.0.1
 # https://qiita.com/varmil/items/9b0aeafa85975474e9b6
 if [ -f ~/.git-prompt.sh ]; then
     source ~/.git-prompt.sh
+fi
+
+# if GitHub command installed enable completion
+if command -v gh >>/dev/null 2>&1; then
+    eval "$(gh completion -s bash)"
 fi
 
 GIT_PS1_SHOWDIRTYSTATE=1

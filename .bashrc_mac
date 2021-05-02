@@ -14,3 +14,7 @@ fi
 if command -v gdate > /dev/null 2>&1; then
   alias date='gdate'
 fi
+export GPG_TTY=$(tty)
+
+alias vpn-start="networksetup -connectpppoeservice"
+alias vpn-stop="networksetup -disconnectpppoeservice"

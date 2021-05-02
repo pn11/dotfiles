@@ -1,0 +1,32 @@
+{
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "../dotfiles-private"
+    }
+],
+"settings": {
+    "workbench.colorCustomizations": {
+      "activityBar.activeBackground": "#524d5c",
+      "activityBar.activeBorder": "#bf6a40",
+      "activityBar.background": "#524d5c",
+      "activityBar.foreground": "#e7e7e7",
+      "activityBar.inactiveForeground": "#e7e7e799",
+      "activityBarBadge.background": "#bf6a40",
+      "activityBarBadge.foreground": "#e7e7e7",
+      "statusBar.background": "#393640",
+      "statusBar.border": "#393640",
+      "statusBar.foreground": "#e7e7e7",
+      "statusBarItem.hoverBackground": "#524d5c",
+      "tab.activeBorder": "#524d5c",
+      "titleBar.activeBackground": "#393640",
+      "titleBar.activeForeground": "#e7e7e7",
+      "titleBar.border": "#393640",
+      "titleBar.inactiveBackground": "#39364099",
+      "titleBar.inactiveForeground": "#e7e7e799"
+    },
+    "peacock.color": "#393640"
+}
+}
