@@ -1,9 +1,8 @@
 0xed
 adobe-acrobat-reader
-adoptopenjdk/openjdk/adoptopenjdk8
+adoptopenjdk8
 appcleaner
-biscuit
-cmd-eikana
+blender
 cyberduck
 dash
 day-o
@@ -18,6 +17,7 @@ google-japanese-ime
 gyazo
 hyperswitch
 iterm2
+karabiner-elements
 keycastr
 lastfm
 licecap
@@ -26,9 +26,8 @@ nextcloud
 open-in-code
 pycharm-ce
 simplenote
+sizeup
+skim
 skitch
-slack
-visual-studio-code
-webex-meetings
-webex-teams
-xquartz
+teamviewer
+ultimaker-cura

@@ -1,8 +1,11 @@
 bash
 bash-completion@2
 bat
+brew-file
 cairo
 coreutils
+emacs
+findutils
 fish
 fontconfig
 freetype
@@ -19,6 +22,7 @@ gnuplot
 gnutls
 graphite2
 harfbuzz
+htop
 icu4c
 jpeg
 libcerf
@@ -38,10 +42,10 @@ mpfr
 mysql
 ncurses
 nettle
+nkf
 nmap
 node
 openjdk
-openssl
 openssl@1.1
 osx-cpu-temp
 p11-kit
@@ -62,8 +66,10 @@ socat
 sqlite
 telnet
 tmux
+tree
 unbound
 utf8proc
+wakatime-cli
 webp
 wget
 xz
