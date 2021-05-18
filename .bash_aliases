@@ -46,6 +46,8 @@ alias emacsd="emacs --daemon"
 alias E="emacsclient -t -a \"emacs --daemon\""
 alias kill-emacs="emacsclient -e '(kill-emacs)'"
 
+alias C=code
+
 ###screen###
 #http://tm.root-n.com/unix:command:screen
 #screen -xR

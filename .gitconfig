@@ -44,6 +44,7 @@
 
 [include]
   path = ~/.gitconfig_user
+  path = ~/.gitconfig_gpg
 
 [core]
   excludesfile = ~/.gitignore_global
