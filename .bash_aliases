@@ -67,9 +67,19 @@ alias dclog="dclogs"
 alias dcexec="docker-compose exec"
 alias docker-kill-all="docker ps | awk '{print \$1}' | grep -v 'CONTAINER' | xargs docker kill"
 alias docker-rm-all="docker ps -a | awk '{print \$1}' | grep -v 'CONTAINER' | xargs docker rm"
+alias ctop="docker run --rm -ti \
+  --name=ctop \
+  --volume /var/run/docker.sock:/var/run/docker.sock:ro \
+  quay.io/vektorlab/ctop:latest"
 
 alias journal="E +999999 ~/git/OkaNotes/2020/journal.md"
 alias j=journal
 
 ### Python ###
-alias venv="python3 -m venv"
+alias venv="python -m venv"
+alias venv3="python3 -m venv"
+alias freeze="pip freeze > requirements.txt"
+alias freeze-no-var="pip freeze | sed 's/==.*//g' > requirements.txt"
+alias freeze3="pip3 freeze > requirements.txt"
+alias freeze3-no-var="pip freeze | sed 's/==.*//g' > requirements.txt"
+
