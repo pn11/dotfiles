@@ -1,11 +1,11 @@
-name: Build and Deploy
+name: Test .emacs
 on:
   push:
     branches:
       - master
 
 jobs:
-  test-emavs:
+  test-emacs:
     name: Test Emacs init.el
     runs-on: ${{ matrix.os }}
     strategy:
