@@ -204,7 +204,7 @@ fi
 # OkaScripts
 SCRIPT_DIR=$(cd $(dirname $(readlink -f $0 || echo $0));pwd -P)
 if [ -d $SCRIPT_DIR/OkaScripts ]; then
-    export PATH="$HOME/OkaScripts/bin:$PATH"
+    export PATH="$SCRIPT_DIR/OkaScripts/bin:$PATH"
 fi
 
 export NO_PROXY=localhost,127.0.0.1
