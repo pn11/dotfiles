@@ -1,0 +1,3 @@
+[submodule "OkaScripts"]
+	path = OkaScripts
+	url = https://github.com/pn11/OkaScripts.git

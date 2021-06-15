@@ -201,6 +201,12 @@ if [ -d $HOME/.brew ]; then
     export PKG_CONFIG_PATH="/Users/oka/.brew/opt/ruby/lib/pkgconfig"
 fi
 
+# OkaScripts
+SCRIPT_DIR=$(cd $(dirname $(readlink -f $0 || echo $0));pwd -P)
+if [ -d $SCRIPT_DIR/OkaScripts ]; then
+    export PATH="$HOME/OkaScripts/bin:$PATH"
+fi
+
 export NO_PROXY=localhost,127.0.0.1
 
 # git-prompt
@@ -234,7 +240,3 @@ GIT_PS1_SHOWSTASHSTATE=1
 export PS1="$PS1"'\[\033[1;31m\]$(__git_ps1)\[\033[00m\] \$ '
 
 ##############
-
-
-# Temp
-export PATH=$PATH:$HOME/git/OkaScripts/bin
