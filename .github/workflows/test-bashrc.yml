@@ -15,4 +15,8 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@master
       - name: Test bashrc
-        run: source .bashrc
+        run: |
+          rm ~/.bashrc
+          bash install.sh
+          cd
+          source .bashrc

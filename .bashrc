@@ -5,7 +5,7 @@ case $- in
 esac
 
 # Path to dotfiles directory
-SCRIPT_DIR=$(cd $(dirname $(readlink -f $0 || echo $0));pwd -P)
+SCRIPT_DIR=$(cd $(dirname $(readlink -f ~/.bashrc));pwd -P)
 
 # history をコマンド実行ごとに同期
 #export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
