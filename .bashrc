@@ -4,6 +4,9 @@ case $- in
       *) return;;
 esac
 
+# Path to dotfiles directory
+SCRIPT_DIR=$(cd $(dirname $(readlink -f $0 || echo $0));pwd -P)
+
 # history をコマンド実行ごとに同期
 #export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 export PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
@@ -122,9 +125,11 @@ if ! shopt -oq posix; then
 fi
 
 # bash completion
-for file in $(ls -d1 ~/.bash_completion.d/* | grep -v README.md | grep -v .gitignore); do
-    source $file
-done
+if [ -d ~/.bash_completion.d ]; then
+    for file in $(ls -d1 ~/.bash_completion.d/* | grep -v README.md | grep -v .gitignore); do
+        source $file
+    done
+fi
 
 # DISPLAY環境変数が設定されていなかったら SSH クライアントを出力先に設定
 # この [ -v ] は bash 4.2 で追加。cf. https://luna2-linux.blogspot.com/2014/05/bash.html
@@ -202,7 +207,6 @@ if [ -d $HOME/.brew ]; then
 fi
 
 # OkaScripts
-SCRIPT_DIR=$(cd $(dirname $(readlink -f $0 || echo $0));pwd -P)
 if [ -d $SCRIPT_DIR/OkaScripts ]; then
     export PATH="$SCRIPT_DIR/OkaScripts/bin:$PATH"
 fi
@@ -237,6 +241,9 @@ GIT_PS1_SHOWSTASHSTATE=1
 # \$ $
 # PS1 はその場で評価して欲しいため double quote
 # __git_ps1 は lazy eval して欲しいため single quote
-export PS1="$PS1"'\[\033[1;31m\]$(__git_ps1)\[\033[00m\] \$ '
-
+if command -v __git_ps1 >>/dev/null 2>&1; then
+    export PS1="$PS1"'\[\033[1;31m\]$(__git_ps1)\[\033[00m\] \$ '
+else
+    bash ${SCRIPT_DIR}/scripts/install_git_prompt.sh
+fi
 ##############
