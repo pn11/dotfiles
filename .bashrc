@@ -5,7 +5,11 @@ case $- in
 esac
 
 # Path to dotfiles directory
+if command -v greadlink > /dev/null 2>&1; then
+    alias readlink='greadlink'
+fi
 SCRIPT_DIR=$(cd $(dirname $(readlink -f ~/.bashrc));pwd -P)
+echo $SCRIPT_DIR
 
 # history をコマンド実行ごとに同期
 #export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
