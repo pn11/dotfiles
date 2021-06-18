@@ -17,6 +17,7 @@ alias up="cd ../"
 alias upup="cd ../../"
 alias gi="git"
 alias extract="dtrx"
+alias du1="du --max-depth=1"
 
 alias portcheck="nc -vz"
 alias gterm="gnome-terminal"
@@ -43,7 +44,7 @@ alias emacsd="emacs --daemon"
 # emacsclient -t -a "" で alternative editor = "" だと daemon を自動起動するが、
 # load path を指定すると client が起動してくれない。
 #alias E="emacsclient -t -a \"emacs --daemon -l ~/.emacs\""
-alias E="emacsclient -t -a \"emacs --daemon\""
+#alias E="emacsclient -t -a \"emacs --daemon\""
 alias kill-emacs="emacsclient -e '(kill-emacs)'"
 
 alias C=code
