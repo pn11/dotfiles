@@ -9,7 +9,6 @@ if command -v greadlink > /dev/null 2>&1; then
     alias readlink='greadlink'
 fi
 SCRIPT_DIR=$(cd $(dirname $(readlink -f ~/.bashrc));pwd -P)
-echo $SCRIPT_DIR
 
 # history をコマンド実行ごとに同期
 #export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
@@ -121,9 +120,9 @@ fi
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
+  if [ -d /usr/share/bash-completion/bash_completion ]; then
     . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
+  elif [ -d /etc/bash_completion ]; then
     . /etc/bash_completion
   fi
 fi
