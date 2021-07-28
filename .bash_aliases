@@ -82,7 +82,7 @@ alias j=journal
 alias venv="python -m venv"
 alias venv3="python3 -m venv"
 alias freeze="pip freeze > requirements.txt"
-alias freeze-no-var="pip freeze | sed 's/==.*//g' > requirements.txt"
+alias freeze-no-ver="pip freeze | sed 's/==.*//g' > requirements.txt"
 alias freeze3="pip3 freeze > requirements.txt"
-alias freeze3-no-var="pip freeze | sed 's/==.*//g' > requirements.txt"
+alias freeze3-no-ver="pip freeze | sed 's/==.*//g' > requirements.txt"
 
