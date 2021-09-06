@@ -172,6 +172,11 @@ if [ -d $HOME/.pyenv ]; then
     eval "$(pyenv init -)"
 fi
 
+# For Pipenv
+# pipenv の仮想環境がプロジェクト直下に作られるようにする
+# https://pyteyon.hatenablog.com/entry/2019/10/03/182407
+export PIPENV_VENV_IN_PROJECT=true
+
 # For Poetry
 if [ -d $HOME/.poetry ]; then
     export PATH="$HOME/.poetry/bin:$PATH"
