@@ -6,7 +6,8 @@ esac
 
 # history をコマンド実行ごとに同期
 #export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
-export PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
+#export PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
+export PROMPT_COMMAND="history -a; history -n;"
 # append to the history file, don't overwrite it
 shopt -s histappend
 
@@ -169,7 +170,7 @@ fi
 if [ -d $HOME/.pyenv ]; then
     export PYENV_ROOT="$HOME/.pyenv"
     export PATH="$PYENV_ROOT/bin:$PATH"
-    eval "$(pyenv init -)"
+    eval "$(pyenv init --path)"
 fi
 
 # For Pipenv
@@ -180,6 +181,12 @@ export PIPENV_VENV_IN_PROJECT=true
 # For Poetry
 if [ -d $HOME/.poetry ]; then
     export PATH="$HOME/.poetry/bin:$PATH"
+fi
+
+# For n
+export N_PREFIX=$HOME/.n
+if [ -d $N_PREFIX/bin ]; then
+    export PATH="$N_PREFIX/bin:$PATH"
 fi
 
 # For yarn
