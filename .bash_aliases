@@ -88,4 +88,5 @@ alias freeze3-no-ver="pip freeze | sed 's/==.*//g' > requirements.txt"
 
 ### NQS and PBS ###
 alias qs=qstat
+alias qs_mine="qs -u ${USER}"
 alias qdel_mine="qstat | grep ${USER} | awk '{print $1}' | xargs qdel"
