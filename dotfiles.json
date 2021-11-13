@@ -1,0 +1,74 @@
+[
+    {
+        "src": ".bash_aliases",
+        "tgt": ""
+    },
+    {
+        "src": ".bash_completion.d",
+        "tgt": ""
+    },
+    {
+        "src": ".bash_profile",
+        "tgt": ""
+    },
+    {
+        "src": ".bashrc",
+        "tgt": ""
+    },
+    {
+        "src": ".bashrc_mac",
+        "tgt": ""
+    },
+    {
+        "src": ".bashrc_ubuntu",
+        "tgt": ""
+    },
+    {
+        "src": ".bashrc_wsl",
+        "tgt": ""
+    },
+    {
+        "src": ".emacs.d",
+        "tgt": ""
+    },
+    {
+        "src": ".screenrc",
+        "tgt": ""
+    },
+    {
+        "src": ".tmux.conf",
+        "tgt": ""
+    },
+    {
+        "src": ".gitconfig",
+        "tgt": ""
+    },
+    {
+        "src": ".gitconfig_user",
+        "tgt": ""
+    },
+    {
+        "src": ".gitignore_global",
+        "tgt": ""
+    },
+    {
+        "src": ".gnuplot",
+        "tgt": ""
+    },
+    {
+        "src": ".lesskey",
+        "tgt": ""
+    },
+    {
+        "src": ".xmodmaprc",
+        "tgt": ""
+    },
+    {
+        "src": ".projectile",
+        "tgt": ""
+    },
+    {
+        "src": ".terminalizer",
+        "tgt": ""
+    }
+]
