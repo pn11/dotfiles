@@ -216,7 +216,7 @@ if [ -d $HOME/.brew ]; then
 fi
 
 # Path to dotfiles directory
-# (For Mac, greadlink from brew needed.)
+# (For Mac, greadlink from brew needed. brew install coreutils)
 if command -v greadlink > /dev/null 2>&1; then
     alias readlink='greadlink'
 fi
