@@ -10,14 +10,23 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-16.04, ubuntu-18.04, ubuntu-20.04, macos-latest]
+        os: [ubuntu-18.04, ubuntu-20.04]
+        # macos-latest
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
+      - name: Install Python
+        run: sudo apt-get -y update && sudo apt-get -y install python3
       - name: Test bashrc
         run: |
-          rm ~/.bashrc
-          rm ~/.bash_profile
-          bash install.sh
+          if [ -f ~/.bashrc ]; then
+              rm ~/.bashrc
+          fi
+          if [ -f ~/.bash_profile ]; then
+              rm ~/.bash_profile
+          fi
+          pwd
+          ls -la
+          python3 install.py
           cd
           source .bashrc

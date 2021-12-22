@@ -10,7 +10,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-16.04, ubuntu-20.04]
+        os: [ubuntu-20.04, macos-latest]
         # never complete in ubuntu-18.04
     steps:
       - name: Checkout Repo
@@ -19,7 +19,7 @@ jobs:
         run: sudo apt-get -y update && sudo apt-get -y install emacs-nox git python3-venv
       - name: check Emacs version
         run: emacs --version
-      - name: install dotfiles
-        run: bash install.sh
+      - name: install .emacs
+        run: python3 install.py
       - name: Test init.el
         run: emacs --daemon --debug-init

@@ -6,6 +6,8 @@ import subprocess
 
 HOME = os.getenv("HOME") + '/'
 DIR = dirname(__file__) + '/'
+print(f"{HOME} {DIR}")
+
 
 def main():
     json_dict = json.load(open('dotfiles.json'))
