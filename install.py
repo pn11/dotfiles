@@ -1,13 +1,12 @@
+# Python >= 3.7
 import json
 import os
-from os.path import join, dirname
+from os.path import abspath, dirname, join
 import subprocess
 
 
 HOME = os.getenv("HOME") + '/'
-DIR = dirname(__file__) + '/'
-print(f"{HOME} {DIR}")
-
+DIR = dirname(abspath(__file__)) + '/'
 
 def main():
     json_dict = json.load(open('dotfiles.json'))
