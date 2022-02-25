@@ -32,14 +32,6 @@
         "tgt": ""
     },
     {
-        "src": ".screenrc",
-        "tgt": ""
-    },
-    {
-        "src": ".tmux.conf",
-        "tgt": ""
-    },
-    {
         "src": ".gitconfig",
         "tgt": ""
     },
@@ -64,15 +56,23 @@
         "tgt": ""
     },
     {
-        "src": ".xmodmaprc",
-        "tgt": ""
-    },
-    {
         "src": ".projectile",
         "tgt": ""
     },
     {
+        "src": ".screenrc",
+        "tgt": ""
+    },
+    {
+        "src": ".tmux.conf",
+        "tgt": ""
+    },
+    {
         "src": ".terminalizer",
+        "tgt": ""
+    },
+    {
+        "src": ".xmodmaprc",
         "tgt": ""
     }
 ]
