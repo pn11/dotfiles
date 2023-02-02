@@ -183,6 +183,11 @@ if [ -d $HOME/.poetry ]; then
     export PATH="$HOME/.poetry/bin:$PATH"
 fi
 
+# Recently Poetry is installed in ~/.local
+if [ -d $HOME/.local ]; then
+    export PATH="$HOME/.local/bin:$PATH"
+fi
+
 # For n
 export N_PREFIX=$HOME/.n
 if [ -d $N_PREFIX/bin ]; then
