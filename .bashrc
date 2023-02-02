@@ -105,12 +105,6 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# Local settings.
-
-if [ -f ~/.bashrc_local ] ; then
-    . ~/.bashrc_local
-fi
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -268,3 +262,9 @@ else
     bash ${SCRIPT_DIR}/scripts/install_git_prompt.sh
 fi
 ##############
+
+# Local settings.
+
+if [ -f ~/.bashrc_local ] ; then
+    . ~/.bashrc_local
+fi
