@@ -160,6 +160,18 @@ if [ -d $HOME/local/bin ]; then
     export PATH="$HOME/local/bin:$PATH:"
 fi
 
+# Flutter
+if [ -d $HOME/local/flutter/bin ]; then
+    export PATH="$HOME/local/flutter/bin:$PATH:"
+fi
+
+# Android
+if [ -d $HOME/Library/Android/sdk ]; then
+    # https://developer.android.com/studio/command-line
+    export ANDROID_HOME="$HOME/Library/Android/sdk"
+    export PATH="$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/version/bin/:$PATH"
+fi
+
 # For pyenv
 if [ -d $HOME/.pyenv ]; then
     export PYENV_ROOT="$HOME/.pyenv"
