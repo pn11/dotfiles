@@ -233,6 +233,24 @@ if command -v greadlink > /dev/null 2>&1; then
 fi
 SCRIPT_DIR=$(cd $(dirname $(readlink -f ~/.bashrc));pwd -P)
 
+# brew install grep
+if command -v ggrep > /dev/null 2>&1; then
+    alias grep='ggrep'
+fi
+# Use Tmux in VS Code Integrated Terminal
+# https://cppdev.medium.com/vs-code-and-tmux-intergation-for-reliable-remote-development-e26594e6757a
+if [ ! -z $TMUX ]; then
+    OLD_CSUM=`echo $PATH | grep -oP "(?<=\/home\/$USER\/.vscode-server\/bin\/).*?(?=\/bin)" | head -1`
+    if [ ! -z $OLDCSUM ];then
+        # Only if vscode-server is working
+        NEW_CSUM=`ls -tr /home/$USER/.vscode-server/bin/ | tail -n 1`export PATH=`echo $PATH | sed "s/$OLD_CSUM/$NEW_CSUM/g"`
+        export GIT_ASKPASS=`echo $GIT_ASKPASS | sed "s/$OLD_CSUM/$NEW_CSUM/g"`
+        export VSCODE_GIT_ASKPASS_MAIN=`echo $VSCODE_GIT_ASKPASS_MAIN | sed "s/$OLD_CSUM/$NEW_CSUM/g"`
+        export VSCODE_GIT_ASKPASS_NODE=`echo $VSCODE_GIT_ASKPASS_NODE | sed "s/$OLD_CSUM/$NEW_CSUM/g"`
+        export VSCODE_IPC_HOOK_CLI=`ls -tr /tmp/vscode-ipc-* | tail -n 1`%
+    fi
+fi
+
 # OkaScripts
 if [ -d $SCRIPT_DIR/OkaScripts ]; then
     export PATH="$SCRIPT_DIR/OkaScripts/bin:$PATH"
