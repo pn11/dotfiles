@@ -239,7 +239,7 @@ if command -v ggrep > /dev/null 2>&1; then
 fi
 # Use Tmux in VS Code Integrated Terminal
 # https://cppdev.medium.com/vs-code-and-tmux-intergation-for-reliable-remote-development-e26594e6757a
-if [ ! -z $TMUX ]; then
+if [ -n "$TMUX" ]; then
     OLD_CSUM=`echo $PATH | grep -oP "(?<=\/home\/$USER\/.vscode-server\/bin\/).*?(?=\/bin)" | head -1`
     if [ ! -z $OLDCSUM ];then
         # Only if vscode-server is working
