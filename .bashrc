@@ -126,7 +126,8 @@ fi
 # DISPLAY環境変数が設定されていなかったら SSH クライアントを出力先に設定
 # この [ -v ] は bash 4.2 で追加。cf. https://luna2-linux.blogspot.com/2014/05/bash.html
 # ただし Mac の場合は brew install bash で 5.0 を入れても動かなかった。
-if [ -v DISPLAY ]
+# 2023/12/13 -v から -n に変更
+if [ -n "$DISPLAY" ]
 then
     :
 else
@@ -298,3 +299,5 @@ fi
 if [ -f ~/.bashrc_local ] ; then
     . ~/.bashrc_local
 fi
+export PATH="/usr/local/opt/openjdk@17/bin:$PATH"
+export JAVA_HOME="/usr/local/opt/openjdk/libexec/openjdk.jdk/Contents/Home/"
