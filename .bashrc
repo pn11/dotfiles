@@ -195,6 +195,18 @@ if [ -d $HOME/.local ]; then
     export PATH="$HOME/.local/bin:$PATH"
 fi
 
+# For Micromamba
+export MAMBA_EXE='$HOME/.local/bin/micromamba';
+export MAMBA_ROOT_PREFIX='$HOME/micromamba';
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell bash --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__mamba_setup"
+else
+    alias micromamba="$MAMBA_EXE"  # Fallback on help from mamba activate
+fi
+unset __mamba_setup
+
+
 # For n
 export N_PREFIX=$HOME/.n
 if [ -d $N_PREFIX/bin ]; then
@@ -301,3 +313,5 @@ if [ -f ~/.bashrc_local ] ; then
 fi
 export PATH="/usr/local/opt/openjdk@17/bin:$PATH"
 export JAVA_HOME="/usr/local/opt/openjdk/libexec/openjdk.jdk/Contents/Home/"
+
+
