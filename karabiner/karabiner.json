@@ -1047,6 +1047,42 @@
                                 "type": "basic"
                             }
                         ]
+                    },
+                    {
+                        "description": "Left Option -> Esc for Terminal.app",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.googlecode\\.iterm2",
+                                            "^com\\.apple\\.Terminal"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "left_option",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "escape"
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "left_option"
+                                    }
+                                ],
+
+                                "type": "basic"
+                            }
+                        ]
                     }
                 ]
             },

@@ -1,3 +1,7 @@
+if [ -e ~/.bash_aliases ]; then
+    source ~/.bash_aliases
+fi
+
 # For Homebrew for mac
 
 export HOMEBREW_PREFIX="/opt/homebrew"
