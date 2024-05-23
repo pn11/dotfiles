@@ -315,3 +315,4 @@ export PATH="/usr/local/opt/openjdk@17/bin:$PATH"
 export JAVA_HOME="/usr/local/opt/openjdk/libexec/openjdk.jdk/Contents/Home/"
 
 
+export PATH=$HOMEBREW_PREFIX/opt/gnu-getopt/bin:$PATH
