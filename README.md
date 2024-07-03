@@ -1,5 +1,19 @@
 # dotfiles
 
+## submodule
+
+Init
+
+```sh
+git submodule update --init --recursive
+```
+
+pull
+
+```sh
+git pull --recurse-submodules
+```
+
 ## AquaSKK
 
 - `Ctrl-j` が Chrome, PowerPoint, SimpleNote などで他の動作になってしまう
