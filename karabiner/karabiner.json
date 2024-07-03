@@ -1055,7 +1055,6 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com\\.googlecode\\.iterm2",
                                             "^com\\.apple\\.Terminal"
                                         ],
                                         "type": "frontmost_application_if"
