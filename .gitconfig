@@ -56,3 +56,5 @@
   diff = nkf -w | less
   log = nkf -w | less
   show = nkf -w | less
+[init]
+	defaultBranch = main

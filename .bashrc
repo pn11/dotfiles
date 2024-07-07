@@ -196,7 +196,11 @@ if [ -d $HOME/.local ]; then
 fi
 
 # For Micromamba
-export MAMBA_EXE="$HOME/.local/bin/micromamba";
+if [ -e $HOMEBREW_PREFIX/bin/micromamba ]; then
+    export MAMBA_EXE=$HOMEBREW_PREFIX/bin/micromamba
+elif [ -e $HOME/.local/bin/micromamba ]; then
+    export MAMBA_EXE="$HOME/.local/bin/micromamba";
+fi
 export MAMBA_ROOT_PREFIX="$HOME/micromamba";
 __mamba_setup="$("$MAMBA_EXE" shell hook --shell bash --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
 if [ $? -eq 0 ]; then
@@ -311,8 +315,9 @@ fi
 if [ -f ~/.bashrc_local ] ; then
     . ~/.bashrc_local
 fi
-export PATH="/usr/local/opt/openjdk@17/bin:$PATH"
-export JAVA_HOME="/usr/local/opt/openjdk/libexec/openjdk.jdk/Contents/Home/"
 
+# Java
+export PATH="$HOMEBREW_PREFIX/opt/openjdk/bin:$PATH"
+export JAVA_HOME="$HOMEBREW_PREFIX/opt/openjdk/libexec/openjdk.jdk/Contents/Home/"
 
 export PATH=$HOMEBREW_PREFIX/opt/gnu-getopt/bin:$PATH
