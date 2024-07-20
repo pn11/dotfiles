@@ -25,10 +25,10 @@
                                     {
                                         "bundle_identifiers": [
                                             "^com\\.microsoft\\.Powerpoint",
-					    "^com\\.jetbrains\\.",
-					    "^com\\.automattic\\.simplenote",
-					    "^com\\.google\\.Chrome",
-					    "^com\\.googlecode\\.iterm2$",
+                                            "^com\\.jetbrains\\.",
+                                            "^com\\.automattic\\.simplenote",
+                                            "^com\\.google\\.Chrome",
+                                            "^com\\.googlecode\\.iterm2$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -81,6 +81,32 @@
                         ]
                     },
                     {
+                        "description": "Change CapsLock to left_ctrl. (Post tilde if pressed alone)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_control"
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "grave_accent_and_tilde"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Emacs key bindings [control+keys] (rev 10)",
                         "manipulators": [
                             {
@@ -125,7 +151,8 @@
                                             "^org\\.macosforge\\.xquartz\\.X11$",
                                             "^org\\.macports\\.X11$",
                                             "^com\\.sublimetext\\.",
-                                            "^com\\.microsoft\\.VSCode$"
+                                            "^com\\.microsoft\\.VSCode$",
+                                            "^com\\.apple\\.ScreenSharing"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -191,7 +218,8 @@
                                             "^org\\.macosforge\\.xquartz\\.X11$",
                                             "^org\\.macports\\.X11$",
                                             "^com\\.sublimetext\\.",
-                                            "^com\\.microsoft\\.VSCode$"
+                                            "^com\\.microsoft\\.VSCode$",
+                                            "^com\\.apple\\.ScreenSharing"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -257,7 +285,8 @@
                                             "^org\\.macosforge\\.xquartz\\.X11$",
                                             "^org\\.macports\\.X11$",
                                             "^com\\.sublimetext\\.",
-                                            "^com\\.microsoft\\.VSCode$"
+                                            "^com\\.microsoft\\.VSCode$",
+                                            "^com\\.apple\\.ScreenSharing"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -399,7 +428,8 @@
                                             "^org\\.macosforge\\.xquartz\\.X11$",
                                             "^org\\.macports\\.X11$",
                                             "^com\\.sublimetext\\.",
-                                            "^com\\.microsoft\\.VSCode$"
+                                            "^com\\.microsoft\\.VSCode$",
+                                            "^com\\.apple\\.ScreenSharing"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -466,7 +496,8 @@
                                             "^org\\.macosforge\\.xquartz\\.X11$",
                                             "^org\\.macports\\.X11$",
                                             "^com\\.sublimetext\\.",
-                                            "^com\\.microsoft\\.VSCode$"
+                                            "^com\\.microsoft\\.VSCode$",
+                                            "^com\\.apple\\.ScreenSharing"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -533,7 +564,8 @@
                                             "^org\\.macosforge\\.xquartz\\.X11$",
                                             "^org\\.macports\\.X11$",
                                             "^com\\.sublimetext\\.",
-                                            "^com\\.microsoft\\.VSCode$"
+                                            "^com\\.microsoft\\.VSCode$",
+                                            "^com\\.apple\\.ScreenSharing"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -600,7 +632,8 @@
                                             "^org\\.macosforge\\.xquartz\\.X11$",
                                             "^org\\.macports\\.X11$",
                                             "^com\\.sublimetext\\.",
-                                            "^com\\.microsoft\\.VSCode$"
+                                            "^com\\.microsoft\\.VSCode$",
+                                            "^com\\.apple\\.ScreenSharing"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -667,7 +700,8 @@
                                             "^org\\.macosforge\\.xquartz\\.X11$",
                                             "^org\\.macports\\.X11$",
                                             "^com\\.sublimetext\\.",
-                                            "^com\\.microsoft\\.VSCode$"
+                                            "^com\\.microsoft\\.VSCode$",
+                                            "^com\\.apple\\.ScreenSharing"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -959,18 +993,7 @@
                     "mouse_flip_y": false,
                     "mouse_swap_wheels": false,
                     "mouse_swap_xy": false,
-                    "simple_modifications": [
-                        {
-                            "from": {
-                                "key_code": "caps_lock"
-                            },
-                            "to": [
-                                {
-                                    "key_code": "grave_accent_and_tilde"
-                                }
-                            ]
-                        }
-                    ],
+                    "simple_modifications": [],
                     "treat_as_built_in_keyboard": false
                 },
                 {
@@ -1123,18 +1146,7 @@
                 "delay_milliseconds_before_open_device": 1000
             },
             "selected": true,
-            "simple_modifications": [
-                {
-                    "from": {
-                        "key_code": "caps_lock"
-                    },
-                    "to": [
-                        {
-                            "key_code": "grave_accent_and_tilde"
-                        }
-                    ]
-                }
-            ],
+            "simple_modifications": [],
             "virtual_hid_keyboard": {
                 "country_code": 0,
                 "indicate_sticky_modifier_keys_state": true,
