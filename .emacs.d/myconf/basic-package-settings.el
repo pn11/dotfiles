@@ -26,7 +26,7 @@
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/") 
                          ("melpa" . "http://melpa.org/packages/") 
                          ("org" . "http://orgmode.org/elpa/")))
-(package-initialize)
+;;(package-initialize) ; yields ⛔ Warning (package): Unnecessary call to ‘package-initialize’ in init file
 (package-refresh-contents) ; Takes long time
 
 

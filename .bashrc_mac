@@ -19,6 +19,13 @@ export GPG_TTY=$(tty)
 alias vpn-start="networksetup -connectpppoeservice"
 alias vpn-stop="networksetup -disconnectpppoeservice"
 
+
+# emacs-mac
+if [ -d /opt/homebrew/opt/emacs-mac/bin ] ; then
+   export PATH=opt/homebrew/opt/emacs-mac/bin:$PATH
+fi
+
+
 export HOMEBREW_PREFIX="/opt/homebrew";
 export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
 export HOMEBREW_REPOSITORY="/opt/homebrew";

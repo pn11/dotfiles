@@ -243,6 +243,12 @@ if [ -d $HOME/.brew ]; then
     export PKG_CONFIG_PATH="/Users/oka/.brew/opt/ruby/lib/pkgconfig"
 fi
 
+# DoomEmacs
+if [ -d $HOME/.config/emacs/bin ]; then
+    export PATH="$HOME/.config/emacs/bin:$PATH"
+fi
+
+
 # Path to dotfiles directory
 # (For Mac, greadlink from brew needed. brew install coreutils)
 if command -v greadlink > /dev/null 2>&1; then

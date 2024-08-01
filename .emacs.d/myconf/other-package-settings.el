@@ -109,16 +109,47 @@
   elisp-format)
 (define-key emacs-lisp-mode-map (kbd "C-c C-f") 'elisp-format-buffer)
 
-;;; Projectile https://github.com/bbatsov/projectile
+;; Projectile https://github.com/bbatsov/projectile
 (use-package 
   projectile 
-  :diminish projectile-mode)
-(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+  :diminish projectile-mode
+  :config
+  ;; autostart projectile
+  (projectile-mode)
+  ;; ignore directories from projectile
+  (add-to-list
+   'projectile-globally-ignored-directories
+   "node_modules")
+  (define-key projectile-mode-map
+              (kbd "C-c p") 'projectile-command-map)
+  ;; enable cache
+  (setq projectile-enable-caching t)
+  (setq projectile-project-search-path '("~/projects/" "~/work/" ("~/git" . 1)))
+  (setq projectile-switch-project-action 'projectile-dired)
+
+  ;; https://github.com/bbatsov/helm-projectile
+  (use-package helm-projectile)
+  (setq projectile-completion-system 'helm)
+  )
+
+;; Swiper https://emacs-jp.github.io/tips/emacs-in-2020#ivy
+(use-package
+  swiper
+  :config
+  (define-key global-map (kbd "C-s") 'swiper) ; C-s を isearch から swiper に変更
+  )
 
 (use-package
   vue-mode)
 
 ;;; search-web
 (use-package 
-  search-web)
-(defalias 'web-search 'search-web)     ; web-search をエイリアスに設定
+  search-web
+  :config
+  (defalias 'web-search 'search-web)     ; web-search をエイリアスに設定
+  )
+
+;;; dired-sidbar https://github.com/jojojames/dired-sidebar
+(use-package dired-sidebar
+  :ensure t
+  :commands (dired-sidebar-toggle-sidebar))

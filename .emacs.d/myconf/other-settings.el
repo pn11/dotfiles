@@ -14,3 +14,6 @@
   (insert (shell-command-to-string "echo -n $(date +%H:%M)")))
 (defalias 'time 'insert-time)
 (defalias 'now 'insert-time)
+
+;; project.el https://github.com/emacs-mirror/emacs/blob/master/lisp/progmodes/project.el
+;;(use-package project)
