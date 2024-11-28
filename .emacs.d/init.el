@@ -12,7 +12,4 @@
          (load "other-package-settings")))
 
 (load "open-url")
-(if window-system
-    nil
-    (load "tmux-settings.el")         ; C-x 2 などで Tmux の画面分割を使う (Terminal で 起動しているときのみ)
-    )
+(load "tmux-settings.el")

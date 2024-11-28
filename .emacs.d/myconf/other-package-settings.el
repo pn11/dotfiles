@@ -135,8 +135,10 @@
 ;; Swiper https://emacs-jp.github.io/tips/emacs-in-2020#ivy
 (use-package
   swiper
+  :ensure t
   :config
   (define-key global-map (kbd "C-s") 'swiper) ; C-s を isearch から swiper に変更
+  ;;  (setq swiper-include-line-number-in-search t)
   )
 
 (use-package
@@ -152,4 +154,8 @@
 ;;; dired-sidbar https://github.com/jojojames/dired-sidebar
 (use-package dired-sidebar
   :ensure t
-  :commands (dired-sidebar-toggle-sidebar))
+  :commands (dired-sidebar-toggle-sidebar)
+  :config
+  (define-key global-map (kbd "C-x C-d") 'dired-sidebar-toggle-sidebar)
+  (define-key global-map (kbd "C-x d") 'dired-sidebar-toggle-sidebar)
+  )

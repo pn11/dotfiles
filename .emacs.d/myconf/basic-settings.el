@@ -6,10 +6,10 @@
 ;;; Key bindings
 (define-key global-map (kbd "C-t") nil) ; C-t は Tmux で使うため無効化
 (define-key global-map (kbd "C-x C-o") 'other-window) ; C-x C-o で Window 切り替え
-(if window-system
-    (define-key global-map (kbd "C-x C-c") nil) ; GUI では C-x C-c を無効化
-    nil
-    )
+(when window-system  ; if + progn の代わりに when を使用
+  (define-key global-map (kbd "C-x C-c") nil) ; GUI では C-x C-c を無効化
+  (define-key global-map [?\s-s] 'kill-buffer) ; GUI では command-w で kill-buffer
+  (define-key global-map [?\s-s] 'save-buffer)) ; GUI では command-s で 保存
 (define-key global-map (kbd "M-c") nil)               ; inactivate M-c
 (define-key global-map (kbd "C-h") 'delete-backward-char) ; C-h as backspace
 
@@ -22,6 +22,10 @@
 (define-key global-map (kbd "C-<return>") 'toggle-frame-fullscreen) ; C-return で全画面表示  (Not Mac native fullscreen)
 (define-key global-map (kbd "s-<return>") 'toggle-frame-fullscreen) ; cmd-return で全画面表示 (Not Mac native fullscreen)
 
+(setq shell-file-name "/bin/bash")
+(setq explicit-shell-file-name "/bin/bash")
+(setenv "ESHELL" "/bin/bash")
+(setq shell-default-term-shell "/bin/bash")
 
 ;; Mac で Option キーを Meta キーとして使う
 (setq mac-option-modifier 'meta)
@@ -54,3 +58,6 @@
 (defun reload-init-file ()
   (interactive)
   (load-file user-init-file))
+
+;; 現在行をハイライト
+(global-hl-line-mode t)
