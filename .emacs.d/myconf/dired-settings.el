@@ -24,4 +24,6 @@
                             (define-key dired-mode-map (kbd "n") 'dired-find-file) 
                             (define-key dired-mode-map (kbd "o") 'dired-find-file) 
                             (define-key dired-mode-map (kbd "C-o") 'dired-find-file) 
-                            (define-key dired-mode-map (kbd "C-j") 'dired-find-file)))
+                            (define-key dired-mode-map (kbd "C-j") 'dired-find-file)
+                            ;; dired の buffer を開いたときに最新状態に更新
+                            (add-hook 'dired-mode-hook 'revert-buffer)))
