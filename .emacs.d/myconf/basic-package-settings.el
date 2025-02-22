@@ -39,6 +39,7 @@
   (define-key global-map (kbd "M-y") 'helm-show-kill-ring) ; M-y で Helm の kill ring 表示
   (define-key global-map (kbd "C-x C-f") 'helm-for-files) ; C-x C-f を Helm に置き換え
   (define-key global-map (kbd "M-x") 'helm-M-x) ; M-x を Helm に置き換え
+  (setq browse-url-mosaic-program nil) ; work around for Emacs 28.0 https://fanblogs.jp/goodfornothing/archive/1926/0
   (with-eval-after-load 'helm-buffers
     (define-key helm-buffer-map (kbd "C-k") 'helm-buffer-run-kill-persistent) ; Helm 中は C-k でバッファを kill する
     )
