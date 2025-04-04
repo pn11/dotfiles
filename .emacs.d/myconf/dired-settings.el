@@ -14,12 +14,16 @@
   (dired default-directory))
 (define-key global-map (kbd "C-x C-d") 'dired-default-directory)
 (define-key global-map (kbd "C-x d") 'dired-default-directory)
+;; other-package-settings.el で dired-sidebar に C-x C-d, C-x d を割り当てている
 
 (eval-after-load "dired" '(progn
                             ;; p で上の階層へ (default は 上の行へ)
                             (define-key dired-mode-map (kbd "p") 'dired-up-directory)
                             ;; SPC で中身表示 (Mac の quick look リスペクト。default は 下の行へ)
-                            (define-key dired-mode-map (kbd "SPC") 'dired-display-file)
+                            ;;(define-key dired-mode-map (kbd "SPC") 'dired-display-file)
+                            ;; SPC で directory tree を表示
+                            ;; (dired-display-file は挙動がよく分からないので変更)
+                            (define-key dired-mode-map (kbd "SPC") 'dired-subtree-toggle)
                             ;; n, o, C-o で file を開く (default は(略))
                             (define-key dired-mode-map (kbd "n") 'dired-find-file) 
                             (define-key dired-mode-map (kbd "o") 'dired-find-file) 

@@ -43,6 +43,12 @@
   (with-eval-after-load 'helm-buffers
     (define-key helm-buffer-map (kbd "C-k") 'helm-buffer-run-kill-persistent) ; Helm 中は C-k でバッファを kill する
     )
+  (cond
+   ((eq system-type 'darwin)
+    ;; https://github.com/syl20bnr/spacemacs/issues/3280
+    ;; https://github.com/emacs-helm/helm/wiki/Locate#os-x
+    (setq helm-locate-fuzzy-match nil)
+    (setq helm-locate-command "mdfind -name %s %s"))) ; Mac の場合は helm-locate で spotlight を使用する
   )
 
 ;;; auto-complete
