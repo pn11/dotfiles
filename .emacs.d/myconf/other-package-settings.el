@@ -2,8 +2,14 @@
 
 ;;; magit git-commit
 (when (executable-find "git") 
-  (use-package 
-    magit) 
+  (use-package magit
+    :ensure t
+    :bind (("C-x g" . magit-status))
+    :config
+    (define-key magit-status-mode-map (kbd "d") 'magit-discard) ; d を discard に割り当て
+    (define-key magit-status-mode-map (kbd "a") 'magit-stage)   ; a を stage に割り当て
+    (define-key magit-status-mode-map (kbd "SPC") 'magit-stage) ; SPC を stage に割り当て
+    ;; Magit ステータスモード内で `C-k` をカスタマイズ
   (use-package 
     git-commit))
 
