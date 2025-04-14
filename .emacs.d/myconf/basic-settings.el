@@ -22,6 +22,12 @@
 (define-key global-map (kbd "C-<return>") 'toggle-frame-fullscreen) ; C-return で全画面表示  (Not Mac native fullscreen)
 (define-key global-map (kbd "s-<return>") 'toggle-frame-fullscreen) ; cmd-return で全画面表示 (Not Mac native fullscreen)
 
+(global-set-key (kbd "C-l") ; C-l で recenter の後 font-lock-update で syntac highlighting を更新
+                (lambda ()
+                  (interactive)
+                  (recenter)
+                  (font-lock-update)))
+
 (setq shell-file-name "/bin/bash")
 (setq explicit-shell-file-name "/bin/bash")
 (setenv "ESHELL" "/bin/bash")
