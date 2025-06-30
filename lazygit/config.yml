@@ -1,0 +1,10 @@
+gui:
+  sidePanelWidth: 0.25
+  wrapLinesInStagingView: true
+
+os:
+  edit: 'emacs -nw -q {{filename}}'
+  editAtLine: 'emacs -nw -q --line={{line}} {{filename}}'
+  editAtLineAndWait: 'emacs -nw -q --block --line={{line}} {{filename}}'
+  editInTerminal: true
+  openDirInEditor: 'emacs -nw -q {{dir}}'

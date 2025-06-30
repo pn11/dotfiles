@@ -32,3 +32,9 @@ export HOMEBREW_REPOSITORY="/opt/homebrew";
 export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
 export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
 export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
+
+# Change XDG diretctory
+# https://specifications.freedesktop.org/basedir-spec/latest/
+# ex.) lazygit config path
+# https://github.com/jesseduffield/lazygit/blob/ef6f96bda32455f04a4d0de347e300000285d790/docs/Config.md
+export XDG_CONFIG_HOME="$HOME/.config"
