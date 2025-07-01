@@ -30,7 +30,7 @@
   unstage = reset HEAD
   # https://yulii.github.io/git-wip-alias-20160206.html
   wip = "commit --allow-empty -m '[ci skip] wip commit'"
-  br = branch
+  br = branch --sort=-committerdate
   name = config --get user.name
   mail = config --get user.email
   getname = name
